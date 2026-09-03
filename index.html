@@ -263,25 +263,33 @@
   .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;}
   .mech-bg-overlay{background:linear-gradient(130deg,rgba(5,46,36,0.97) 0%,rgba(5,46,36,0.88) 55%,rgba(4,106,82,0.72) 100%);}
 
-  /* AUTORIDADE — tema dourado */
-  .autoridade{background:linear-gradient(160deg,#151009 0%,#0E0B04 45%,#191307 100%);padding:88px 0;position:relative;overflow:hidden;}
-  .autoridade .eyebrow{color:var(--gold)!important;}
+  /* AUTORIDADE — fundo branco premium, borda dourada, cards jade */
+  .autoridade{background:var(--white);padding:96px 0;position:relative;border-top:2px solid var(--gold);border-bottom:1px solid var(--paper-2);}
+  .autoridade .eyebrow{color:var(--jade-deep)!important;}
   .autoridade .eyebrow::before{background:var(--gold)!important;}
-  .auto-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(ellipse at 50% 5%,rgba(201,162,75,0.13) 0%,transparent 55%);pointer-events:none;z-index:0;}
-  .auto-top{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
-  .auto-left-text{font-size:15px;color:rgba(255,255,255,0.55);max-width:420px;margin-top:18px;line-height:1.8;}
-  .auto-divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin:24px 0;}
-  .auto-badge-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .auto-badge{background:rgba(201,162,75,0.1);border:1px solid rgba(201,162,75,0.25);color:var(--gold);border-radius:100px;padding:5px 14px;font-size:11.5px;font-weight:700;letter-spacing:0.04em;}
-  .auto-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .auto-stat-card{background:rgba(201,162,75,0.04);border:1px solid rgba(201,162,75,0.1);border-radius:16px;padding:28px 24px;transition:border-color 0.28s ease,background 0.28s ease,box-shadow 0.28s ease;}
-  .auto-stat-card:hover{background:rgba(201,162,75,0.08);border-color:rgba(201,162,75,0.32);box-shadow:0 0 48px rgba(201,162,75,0.12);}
-  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:10px;text-shadow:0 0 48px rgba(201,162,75,0.55);}
-  .auto-stat-card .auto-label{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;}
-  .auto-quote{position:relative;margin-top:28px;padding:20px 24px;border-left:2px solid rgba(201,162,75,0.35);background:rgba(201,162,75,0.04);border-radius:0 10px 10px 0;}
-  .auto-quote p{font-family:'Fraunces',serif;font-size:16px;color:rgba(255,255,255,0.65);line-height:1.65;font-style:italic;}
-  .auto-quote cite{display:block;font-size:11px;color:rgba(201,162,75,0.7);margin-top:10px;font-style:normal;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;}
-  @media(max-width:860px){.auto-top{grid-template-columns:1fr;gap:40px;}}
+  .auto-glow{display:none;}
+  .auto-intro{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:end;margin-bottom:52px;}
+  .auto-intro-text{font-size:15px;color:var(--ink-2);line-height:1.78;margin-top:14px;max-width:480px;}
+  .auto-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .auto-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-3);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--paper-2);}
+  .auto-expertise{display:flex;flex-direction:column;gap:13px;margin-bottom:24px;}
+  .auto-exp-item{display:flex;align-items:center;gap:10px;}
+  .auto-exp-label{font-size:13px;color:var(--ink-2);width:164px;flex-shrink:0;line-height:1.3;}
+  .auto-exp-bar-wrap{flex:1;height:5px;background:var(--paper-2);border-radius:3px;overflow:hidden;}
+  .auto-exp-bar{height:100%;background:linear-gradient(90deg,var(--jade-deep),var(--jade));border-radius:3px;}
+  .auto-exp-val{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--jade-deep);font-weight:700;width:54px;text-align:right;flex-shrink:0;}
+  .auto-divider{width:40px;height:2px;background:linear-gradient(90deg,var(--jade),transparent);border-radius:2px;margin:20px 0;}
+  .auto-badge-row{display:flex;flex-wrap:wrap;gap:7px;}
+  .auto-badge{background:var(--jade-soft);border:1px solid var(--jade-line);color:var(--jade-deep);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;}
+  .auto-quote{background:var(--paper-2);border-left:2px solid var(--jade);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:20px;}
+  .auto-quote p{font-family:'Fraunces',serif;font-size:15px;color:var(--ink);line-height:1.65;font-style:italic;margin:0;}
+  .auto-quote cite{display:block;font-size:10px;color:var(--ink-3);margin-top:8px;font-style:normal;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;}
+  .auto-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .auto-stat-card{background:var(--jade-ink);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:22px 18px;transition:transform 0.22s ease,box-shadow 0.22s ease;}
+  .auto-stat-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px -8px rgba(5,46,36,0.35);}
+  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:40px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:8px;text-shadow:0 0 32px rgba(0,200,150,0.4);}
+  .auto-stat-card .auto-label{font-size:11.5px;color:rgba(255,255,255,0.45);line-height:1.55;}
+  @media(max-width:900px){.auto-intro{grid-template-columns:1fr;gap:16px;}.auto-top{grid-template-columns:1fr;gap:32px;}}
   @media(max-width:560px){.auto-stat-grid{grid-template-columns:1fr 1fr;}}
 
   /* DOR EMOCIONAL */
@@ -562,47 +570,103 @@
 
 <!-- QUEM SOMOS -->
 <section class="autoridade" id="quem-somos">
-  <div class="auto-glow"></div>
   <div class="wrap">
-    <div class="reveal" style="position:relative;z-index:1;">
-      <span class="eyebrow" style="color:var(--jade-line);">Quem está por trás</span>
-      <h2 style="color:#fff;font-size:38px;max-width:520px;line-height:1.15;margin-top:4px;">Mais de duas décadas no campo. Não em apresentação.</h2>
+
+    <!-- Intro: headline + texto lado a lado -->
+    <div class="auto-intro reveal">
+      <div>
+        <span class="eyebrow">Quem está por trás</span>
+        <h2 style="font-size:36px;line-height:1.15;margin-top:6px;">Mais de duas décadas no campo.<br>Não em apresentação.</h2>
+      </div>
+      <div>
+        <p class="auto-intro-text">Não chegamos com metodologia genérica de consultoria. Chegamos com carreira executiva em Indústria e Varejo, cicatriz de campo e um método próprio — testado em centenas de operações reais antes de virar produto. A BEXIN existe porque vimos, anos a fio, o mesmo problema: equipe esforçada, gestão perdida, resultado que não fecha.</p>
+      </div>
     </div>
+
+    <!-- Corpo: Conhecimento Técnico + Indicadores de Impacto -->
     <div class="auto-top">
+
+      <!-- ESQUERDA: Conhecimento técnico com barras -->
       <div class="reveal d1">
-        <p class="auto-left-text">Não chegamos com metodologia genérica de consultoria. Chegamos com cicatriz de campo, carreira executiva em Indústria e Varejo, e um método testado em centenas de operações reais — do chão de vendas à diretoria.</p>
-        <div class="auto-divider"></div>
-        <p class="auto-left-text" style="margin-top:0;">A BEXIN existe porque vimos, durante anos, o mesmo problema se repetir: equipe esforçada, gestão perdida, resultado que não fecha. Aprendemos exatamente onde está o buraco — e como tampar.</p>
-        <div class="auto-quote">
-          <p>"Não chegamos com slides bonitos. Chegamos com cicatriz de campo e um método que funciona porque foi testado nas piores situações possíveis."</p>
-          <cite>Fundadores BEXIN</cite>
+        <div class="auto-col-title">Conhecimento técnico · áreas de atuação</div>
+        <div class="auto-expertise">
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Gestão Comercial</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:100%"></div></div>
+            <div class="auto-exp-val">24 anos</div>
+          </div>
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Indústria & Manufatura</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:87%"></div></div>
+            <div class="auto-exp-val">20 anos</div>
+          </div>
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Varejo & Distribuição</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:75%"></div></div>
+            <div class="auto-exp-val">18 anos</div>
+          </div>
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Formação de Líderes</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:92%"></div></div>
+            <div class="auto-exp-val">+10K pess.</div>
+          </div>
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Capacitação de Equipes</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:95%"></div></div>
+            <div class="auto-exp-val">100+ emp.</div>
+          </div>
+          <div class="auto-exp-item">
+            <div class="auto-exp-label">Academia & MBA</div>
+            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:68%"></div></div>
+            <div class="auto-exp-val">Pós-grad.</div>
+          </div>
         </div>
-        <div class="auto-badge-row" style="margin-top:24px;">
+        <div class="auto-divider"></div>
+        <div class="auto-badge-row">
+          <span class="auto-badge">Carreira Executiva</span>
           <span class="auto-badge">Indústria</span>
           <span class="auto-badge">Varejo</span>
-          <span class="auto-badge">Liderança Comercial</span>
-          <span class="auto-badge">Formação Executiva</span>
+          <span class="auto-badge">Formação de Líderes</span>
           <span class="auto-badge">MBA</span>
+          <span class="auto-badge">Método próprio</span>
+        </div>
+        <div class="auto-quote">
+          <p>"Não chegamos com slides. Chegamos com cicatriz de campo e um método que funciona porque foi testado nas piores situações possíveis."</p>
+          <cite>Fundadores BEXIN</cite>
         </div>
       </div>
-      <div class="auto-stat-grid reveal d2">
-        <div class="auto-stat-card">
-          <div class="auto-n">24</div>
-          <div class="auto-label">Anos de atuação comercial em campo</div>
-        </div>
-        <div class="auto-stat-card">
-          <div class="auto-n">+100</div>
-          <div class="auto-label">Clientes atendidos em diferentes segmentos</div>
-        </div>
-        <div class="auto-stat-card">
-          <div class="auto-n">+10K</div>
-          <div class="auto-label">Pessoas formadas em vendas e liderança</div>
-        </div>
-        <div class="auto-stat-card">
-          <div class="auto-n">2</div>
-          <div class="auto-label">Décadas como executivo em Indústria e Varejo</div>
+
+      <!-- DIREITA: Indicadores de impacto numéricos -->
+      <div class="reveal d2">
+        <div class="auto-col-title">Indicadores de impacto</div>
+        <div class="auto-stat-grid">
+          <div class="auto-stat-card">
+            <div class="auto-n">24</div>
+            <div class="auto-label">Anos de atuação comercial em campo</div>
+          </div>
+          <div class="auto-stat-card">
+            <div class="auto-n">+100</div>
+            <div class="auto-label">Empresas atendidas em Indústria e Varejo</div>
+          </div>
+          <div class="auto-stat-card">
+            <div class="auto-n">+10K</div>
+            <div class="auto-label">Profissionais formados em vendas e liderança</div>
+          </div>
+          <div class="auto-stat-card">
+            <div class="auto-n">2</div>
+            <div class="auto-label">Décadas como executivo em empresas de grande porte</div>
+          </div>
+          <div class="auto-stat-card">
+            <div class="auto-n">7</div>
+            <div class="auto-label">Módulos no PULSO cobrindo toda a operação comercial</div>
+          </div>
+          <div class="auto-stat-card">
+            <div class="auto-n">12+</div>
+            <div class="auto-label">Tipos de alerta automático no motor de inteligência</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
