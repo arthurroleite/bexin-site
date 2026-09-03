@@ -203,6 +203,34 @@
   .metodo-card p{font-size:12.5px;color:var(--ink-2);line-height:1.5;}
   @media(max-width:900px){.metodo-layout{grid-template-columns:1fr;}.metodo-cards{grid-template-columns:1fr;}}
 
+  /* QUEM ESTÁ POR TRÁS */
+  .quem{background:var(--jade-ink);color:#fff;}
+  .quem .eyebrow{color:var(--jade-line);}
+  .quem .eyebrow::before{background:var(--jade);}
+  .quem-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;}
+  .qs-block{padding:36px 28px;border-right:1px solid rgba(255,255,255,0.07);text-align:center;transition:background 0.25s ease;}
+  .qs-block:last-child{border-right:none;}
+  .qs-block:hover{background:rgba(255,255,255,0.04);}
+  .qs-n{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:6px;transition:color 0.25s ease;}
+  .qs-block:hover .qs-n{color:var(--gold);}
+  .qs-l{font-size:12.5px;color:rgba(255,255,255,0.5);font-weight:500;line-height:1.4;}
+  .quem-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+  .qc{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:32px;transition:border-color 0.25s ease,background 0.25s ease;}
+  .qc:hover{border-color:var(--gold-line);background:rgba(201,162,75,0.05);}
+  .qc-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--jade);border:1px solid rgba(0,200,150,0.25);border-radius:100px;padding:4px 12px;margin-bottom:20px;}
+  .qc h4{font-size:19px;color:#fff;margin-bottom:10px;line-height:1.25;}
+  .qc-desc{font-size:14px;color:rgba(255,255,255,0.62);line-height:1.7;margin-bottom:20px;}
+  .qc-pills{display:flex;flex-wrap:wrap;gap:7px;}
+  .qc-pill{font-size:11.5px;font-weight:600;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.1);transition:background 0.2s ease,color 0.2s ease;}
+  .qc:hover .qc-pill{background:rgba(201,162,75,0.1);color:var(--gold);border-color:var(--gold-line);}
+  .quem-bar{margin-top:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  .qbar-label{font-size:11px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;}
+  .qbar-divider{width:1px;height:20px;background:rgba(255,255,255,0.1);flex-shrink:0;}
+  .qbar-pills{display:flex;flex-wrap:wrap;gap:7px;}
+  .qbar-pill{font-size:12px;font-weight:600;padding:5px 13px;border-radius:100px;background:rgba(0,200,150,0.08);color:var(--jade);border:1px solid rgba(0,200,150,0.2);}
+  @media(max-width:900px){.quem-stats{grid-template-columns:repeat(2,1fr);}.quem-cards{grid-template-columns:1fr;}}
+  @media(max-width:600px){.quem-stats{grid-template-columns:1fr;}.qs-block{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}}
+
   /* QUALIFY */
   .qualify{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;}
   .qcard{border-radius:16px;padding:28px;transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;}
@@ -266,6 +294,7 @@
       <a href="#pulso">PULSO</a>
       <a href="#insights">Insights</a>
       <a href="#metodo">Método</a>
+      <a href="#quem-somos">Quem somos</a>
       <a href="#processo">Como funciona</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -512,6 +541,75 @@
           <div class="metodo-card reveal d5"><div class="mc-num">05</div><h4>Batida de energia</h4><p>Como manter ritmo e motivação semana após semana.</p></div>
           <div class="metodo-card reveal d6"><div class="mc-num">06</div><h4>Execução individual</h4><p>Cada vendedor responsável pela própria carteira.</p></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM ESTÁ POR TRÁS -->
+<section id="quem-somos" class="quem">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Quem está por trás</span>
+      <h2 style="color:#fff;font-size:34px;">Não consultores de teoria.<br>Profissionais que viveram a operação por dentro.</h2>
+      <p class="lede center" style="margin:10px auto 0;color:rgba(255,255,255,0.62);">Dois sócios com décadas de atuação comercial, formação acadêmica sólida e presença internacional — que decidiram condensar tudo isso em método, ferramenta e inteligência para quem lidera equipes de vendas.</p>
+    </div>
+
+    <div class="quem-stats">
+      <div class="qs-block reveal d1">
+        <div class="qs-n">+20.000</div>
+        <div class="qs-l">Pessoas formadas em<br>gestão e execução comercial</div>
+      </div>
+      <div class="qs-block reveal d2">
+        <div class="qs-n">+100</div>
+        <div class="qs-l">Clientes atendidos em<br>operações comerciais reais</div>
+      </div>
+      <div class="qs-block reveal d3">
+        <div class="qs-n">+24</div>
+        <div class="qs-l">Anos de atuação no<br>mercado comercial</div>
+      </div>
+      <div class="qs-block reveal d4">
+        <div class="qs-n">4</div>
+        <div class="qs-l">Países com clientes<br>atendidos e resultados gerados</div>
+      </div>
+    </div>
+
+    <div class="quem-cards">
+      <div class="qc reveal d1">
+        <div class="qc-tag">Formação Acadêmica</div>
+        <h4>Base acadêmica construída ao longo de mais de 14 anos de vida universitária e certificações.</h4>
+        <p class="qc-desc">A BEXIN reúne titulação de pós-graduação, MBA, especializações e certificações internacionais — com domínio técnico em gestão de projetos, processos, inteligência artificial aplicada e liderança de alta performance.</p>
+        <div class="qc-pills">
+          <span class="qc-pill">MBA em Consultoria Empresarial</span>
+          <span class="qc-pill">Pós em Docência do Ensino Superior</span>
+          <span class="qc-pill">Especialização em Gestão Estratégica de Projetos</span>
+          <span class="qc-pill">Black Belt Lean Six Sigma</span>
+          <span class="qc-pill">Certificação Scrum</span>
+          <span class="qc-pill">+14 anos de vida acadêmica</span>
+        </div>
+      </div>
+      <div class="qc reveal d2">
+        <div class="qc-tag">Resultados de Carreira</div>
+        <h4>Décadas de operação real. Resultados que estão nos números.</h4>
+        <p class="qc-desc">+20.000 profissionais formados em Comunicação, Liderança, Vendas e Tecnologia. Mais de 100 clientes atendidos em Indústria, Varejo, Serviços, Alimentos, Nutracêuticos e Construção Civil. Presença em 4 países, com mais de 9.500 horas de liderança em projetos de alta complexidade.</p>
+        <div class="qc-pills">
+          <span class="qc-pill">+20.000 profissionais formados</span>
+          <span class="qc-pill">+100 clientes atendidos</span>
+          <span class="qc-pill">+9.500h em liderança de projetos</span>
+          <span class="qc-pill">Brasil · Reino Unido · Portugal · EUA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quem-bar reveal">
+      <span class="qbar-label">Segmentos de atuação</span>
+      <div class="qbar-divider"></div>
+      <div class="qbar-pills">
+        <span class="qbar-pill">Indústria</span>
+        <span class="qbar-pill">Varejo</span>
+        <span class="qbar-pill">Alimentos</span>
+        <span class="qbar-pill">Nutracêuticos</span>
+        <span class="qbar-pill">Construção Civil</span>
       </div>
     </div>
   </div>
