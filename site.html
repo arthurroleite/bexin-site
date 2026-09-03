@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEXIN: Consultoria e Inteligência pro Negócio</title>
+<meta name="description" content="BEXIN instala batida, execução e inteligência na sua operação comercial. Método, PULSO e dado para equipes que querem resultado de verdade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --jade:#00C896;
+    --jade-deep:#046A52;
+    --jade-ink:#052E24;
+    --jade-soft:#E4FBF3;
+    --jade-line:#BFF0DE;
+    --ink:#0D1512;
+    --ink-2:#3D4B46;
+    --ink-3:#748883;
+    --paper:#FAFAF8;
+    --paper-2:#F1F4F2;
+    --white:#FFFFFF;
+    --gold:#C9A24B;
+    --gold-soft:rgba(201,162,75,0.12);
+    --gold-line:rgba(201,162,75,0.35);
+    --danger:#E0554A;
+    --amber:#E0A83D;
+    --blue:#4E86D6;
+    --shadow:0 16px 48px -16px rgba(5,46,36,0.2);
+    --shadow-gold:0 16px 40px -12px rgba(201,162,75,0.25);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.02em;margin:0;}
+  p{margin:0;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--jade-deep);margin-bottom:16px;}
+  .eyebrow::before{content:'';width:14px;height:2px;background:var(--jade);border-radius:2px;}
+  .lede{font-size:16px;color:var(--ink-2);max-width:560px;line-height:1.7;}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* BOTÕES */
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:13px 24px;font-weight:700;font-size:14px;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--jade);color:var(--jade-ink);box-shadow:0 10px 28px -8px rgba(0,200,150,0.5);}
+  .btn-primary:hover{box-shadow:0 18px 36px -8px rgba(0,200,150,0.6);}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.3);transition:all 0.2s ease;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .d1{transition-delay:.07s;}.d2{transition-delay:.14s;}.d3{transition-delay:.21s;}
+  .d4{transition-delay:.28s;}.d5{transition-delay:.35s;}.d6{transition-delay:.42s;}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(250,250,248,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--paper-2);transition:box-shadow 0.3s ease;}
+  header.scrolled{box-shadow:0 4px 24px -4px rgba(5,46,36,0.1);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:8px 24px;max-width:1180px;margin:0 auto;}
+  .brand img{display:block;height:36px;width:auto;object-fit:contain;}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--ink-2);}
+  .nav-links a{position:relative;transition:color 0.2s ease;}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);border-radius:2px;transition:width 0.25s ease;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta .btn{padding:9px 18px;font-size:13px;}
+  @media(max-width:860px){.nav-links{display:none;}}
+
+  /* LOGO BANNER */
+  .logo-banner{background:var(--white);padding:40px 0 36px;text-align:center;position:relative;}
+  .logo-banner img{max-height:180px;width:auto;object-fit:contain;display:inline-block;}
+  .logo-banner::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:72px;height:3px;background:linear-gradient(90deg,var(--jade-deep),var(--jade));border-radius:2px;}
+
+  /* CONCEITO */
+  .conceito{background:var(--jade-soft);padding:72px 0;}
+  .conceito-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:44px;border-radius:20px;overflow:hidden;background:rgba(191,240,222,0.45);}
+  .conceito-card{background:var(--white);padding:36px 30px;position:relative;overflow:hidden;transition:transform 0.25s ease, box-shadow 0.25s ease;}
+  .conceito-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-gold);}
+  .conceito-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--jade-deep),var(--jade));transition:background 0.3s ease;}
+  .conceito-card:hover::before{background:linear-gradient(90deg,var(--gold),#e8c06a);}
+  .cc-letter{font-family:'Fraunces',serif;font-size:68px;font-weight:700;line-height:1;margin-bottom:2px;color:var(--jade-soft);}
+  .cc-letter span{color:var(--jade-deep);transition:color 0.25s ease;}
+  .conceito-card:hover .cc-letter span{color:var(--gold);}
+  .cc-word{font-size:10.5px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--jade-deep);margin-bottom:14px;transition:color 0.25s ease;}
+  .conceito-card:hover .cc-word{color:var(--gold);}
+  .conceito-card h3{font-size:18px;margin-bottom:8px;}
+  .conceito-card p{font-size:14px;color:var(--ink-2);line-height:1.6;}
+  @media(max-width:860px){.conceito-grid{grid-template-columns:1fr;}}
+
+  /* HERO */
+  .hero{background:radial-gradient(130% 160% at 20% -20%,#0B4438 0%,var(--jade-ink) 45%,#041D17 100%);color:#fff;padding:100px 0 80px;overflow:hidden;position:relative;}
+  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 30% 20%,black,transparent 68%);pointer-events:none;}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .hero .eyebrow{color:var(--jade-line);}
+  .hero .eyebrow::before{background:var(--jade);}
+  .hero h1{font-size:50px;line-height:1.1;color:#fff;}
+  .hero h1 em{font-style:normal;color:var(--jade);}
+  .hero .sub{font-size:17px;color:rgba(255,255,255,0.72);margin:20px 0 32px;max-width:480px;}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+  .bexin-strip{display:flex;margin-bottom:28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;width:fit-content;}
+  .bs-block{padding:10px 20px;border-right:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;gap:3px;}
+  .bs-block:last-child{border-right:none;}
+  .bs-letter{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--jade);line-height:1;}
+  .bs-word{font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero h1{font-size:36px;}}
+
+  /* HERO VISUAL */
+  .hero-visual{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:18px;backdrop-filter:blur(6px);transition:transform 0.3s ease;}
+  .hero-visual:hover{transform:translateY(-4px);}
+  .hv-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .hv-title{font-size:11px;color:rgba(255,255,255,0.5);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
+  .hv-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px;}
+  .hv-kpi{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:11px 13px;transition:background 0.2s ease;}
+  .hv-kpi:hover{background:rgba(255,255,255,0.09);}
+  .hv-kpi .l{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;}
+  .hv-kpi .v{font-family:'Fraunces',serif;font-size:20px;color:var(--jade);font-weight:600;}
+  .hv-insight{background:rgba(224,85,74,0.1);border:1px solid rgba(224,85,74,0.3);border-radius:10px;padding:11px 13px;font-size:12px;color:#ffd9d5;}
+  .hv-insight b{display:block;color:#fff;font-size:12.5px;margin-bottom:2px;}
+  .hero-chart{margin-top:12px;border-top:1px solid rgba(255,255,255,0.07);padding-top:11px;}
+  .hchart-legend{display:flex;gap:12px;margin-top:5px;}
+  .hchart-legend span{display:flex;align-items:center;gap:5px;font-size:9.5px;color:rgba(255,255,255,0.3);}
+  .hchart-legend i{width:7px;height:7px;border-radius:2px;display:inline-block;flex-shrink:0;font-style:normal;}
+
+  /* STATS */
+  .stats{background:var(--jade-ink);padding:0;}
+  .stats-inner{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,0.06);}
+  .stat-block{padding:40px 32px;border-right:1px solid rgba(255,255,255,0.06);text-align:center;transition:background 0.25s ease;}
+  .stat-block:last-child{border-right:none;}
+  .stat-block:hover{background:rgba(255,255,255,0.03);}
+  .stat-n{font-family:'Fraunces',serif;font-size:48px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:6px;transition:color 0.25s ease;}
+  .stat-block:hover .stat-n{color:var(--gold);}
+  .stat-l{font-size:13px;color:rgba(255,255,255,0.5);font-weight:500;}
+  @media(max-width:760px){.stats-inner{grid-template-columns:1fr;}.stat-block{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);}}
+
+  /* PAIN */
+  .pain-list{display:grid;gap:10px;margin-top:36px;}
+  .pain-item{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--paper-2);border-left:3px solid transparent;border-radius:12px;padding:18px 20px;transition:border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;}
+  .pain-item:hover{border-left-color:var(--gold);box-shadow:var(--shadow-gold);transform:translateX(4px);}
+  .pain-num{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--jade-deep);background:var(--jade-soft);border-radius:7px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;}
+  .pain-item p{font-size:15px;color:var(--ink-2);}
+  .pain-item strong{color:var(--ink);}
+  .pain-close{margin-top:28px;font-size:16px;font-family:'Fraunces',serif;color:var(--ink);max-width:600px;}
+
+  /* MECHANISM */
+  .mech{color:#fff;position:relative;overflow:hidden;}
+  .mech-bg-photo{position:absolute;inset:0;background-image:url('images/escritorio.jpeg');background-size:cover;background-position:center;}
+  .mech-bg-overlay{position:absolute;inset:0;background:linear-gradient(130deg,rgba(5,46,36,0.96) 0%,rgba(5,46,36,0.87) 60%,rgba(4,106,82,0.74) 100%);}
+  .mech-wrap{position:relative;z-index:1;padding:96px 0;}
+  .mech .eyebrow{color:var(--jade-line);}
+  .mech .eyebrow::before{background:var(--jade);}
+  .mech h2{color:#fff;font-size:36px;max-width:640px;line-height:1.15;}
+  .mech-reveal{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .mech-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:28px;transition:border-color 0.25s ease, background 0.25s ease;}
+  .mech-card:hover{border-color:var(--gold-line);background:rgba(201,162,75,0.06);}
+  .mech-card h4{font-size:17px;color:#fff;margin-bottom:8px;}
+  .mech-card p{font-size:14px;color:rgba(255,255,255,0.68);line-height:1.65;}
+  @media(max-width:760px){.mech-reveal{grid-template-columns:1fr;}}
+
+  /* FEATURES */
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;}
+  .feature-card{background:var(--white);border:1px solid var(--paper-2);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;}
+  .feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-gold);border-color:var(--gold-line);}
+  .feature-ico{width:40px;height:40px;border-radius:10px;background:var(--jade-soft);display:flex;align-items:center;justify-content:center;transition:background 0.22s ease;}
+  .feature-card:hover .feature-ico{background:var(--gold-soft);}
+  .feature-card h4{font-size:15.5px;margin-bottom:4px;}
+  .feature-card p{font-size:13.5px;color:var(--ink-2);}
+  @media(max-width:900px){.features-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.features-grid{grid-template-columns:1fr;}}
+
+  /* INSIGHTS */
+  .insights-band{background:var(--paper-2);}
+  .insight-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
+  .icard{background:var(--white);border-radius:12px;padding:18px;border:1px solid #E7EAE8;transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;}
+  .icard:hover{transform:translateY(-4px);box-shadow:var(--shadow-gold);border-color:var(--gold-line);}
+  .badge{font-size:10px;font-weight:700;border-radius:100px;padding:3px 9px;display:inline-flex;align-items:center;gap:5px;margin-bottom:10px;}
+  .badge::before{content:'';width:5px;height:5px;border-radius:50%;}
+  .badge.crit{background:#FDECEA;color:#A83D33;}.badge.crit::before{background:var(--danger);}
+  .badge.att{background:#FFF4E0;color:#8A5A10;}.badge.att::before{background:var(--amber);}
+  .badge.opp{background:var(--jade-soft);color:var(--jade-deep);}.badge.opp::before{background:var(--jade);}
+  .badge.trend{background:#EAF1FD;color:#2C5A9E;}.badge.trend::before{background:var(--blue);}
+  .icard .t{font-size:14px;font-weight:700;margin-bottom:5px;line-height:1.3;}
+  .icard .m{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-3);}
+  @media(max-width:900px){.insight-cards{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.insight-cards{grid-template-columns:1fr;}}
+
+  /* MÉTODO */
+  .metodo-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;}
+  .metodo-photo{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);}
+  .metodo-photo img{width:100%;height:400px;object-fit:cover;display:block;transition:transform 0.5s ease;}
+  .metodo-photo:hover img{transform:scale(1.04);}
+  .metodo-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;}
+  .metodo-card{background:var(--white);border:1px solid var(--paper-2);border-radius:12px;padding:18px;position:relative;overflow:hidden;transition:transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;}
+  .metodo-card:hover{transform:translateY(-3px);border-color:var(--gold-line);box-shadow:var(--shadow-gold);}
+  .metodo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:linear-gradient(90deg,var(--jade-deep),var(--jade));transition:background 0.3s ease;}
+  .metodo-card:hover::before{background:linear-gradient(90deg,var(--gold),#e8c06a);}
+  .metodo-card .mc-num{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--jade-deep);font-weight:700;margin-bottom:6px;transition:color 0.22s ease;}
+  .metodo-card:hover .mc-num{color:var(--gold);}
+  .metodo-card h4{font-size:14px;margin-bottom:4px;}
+  .metodo-card p{font-size:12.5px;color:var(--ink-2);line-height:1.5;}
+  @media(max-width:900px){.metodo-layout{grid-template-columns:1fr;}.metodo-cards{grid-template-columns:1fr;}}
+
+  /* QUALIFY */
+  .qualify{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;}
+  .qcard{border-radius:16px;padding:28px;transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;}
+  .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold);border-color:var(--gold-line);}
+  .qcard.yes{background:var(--jade-soft);border:1px solid var(--jade-line);}
+  .qcard.no{background:var(--white);border:1px solid var(--paper-2);}
+  .qcard h4{font-size:17px;margin-bottom:10px;}
+  .qcard.yes h4{color:var(--jade-deep);}
+  .qcard ul{margin:0;padding-left:18px;font-size:14px;color:var(--ink-2);line-height:1.8;}
+  @media(max-width:760px){.qualify{grid-template-columns:1fr;}}
+
+  /* PROCESS */
+  .process{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;}
+  .pstep{padding:0 24px;position:relative;}
+  .pstep:not(:last-child)::after{content:'';position:absolute;top:18px;right:-12px;width:24px;height:1px;background:var(--jade-line);}
+  .pstep .pn{width:36px;height:36px;border-radius:50%;background:var(--jade-ink);color:var(--jade);font-family:'Fraunces',serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;}
+  .pstep:hover .pn{background:var(--gold);color:var(--jade-ink);box-shadow:var(--shadow-gold);}
+  .pstep h4{font-size:16px;margin-bottom:7px;}
+  .pstep p{font-size:13.5px;color:var(--ink-2);}
+  @media(max-width:860px){.process{grid-template-columns:1fr;gap:28px;}.pstep:not(:last-child)::after{display:none;}}
+
+  /* CTA BAND */
+  .cta-band{background:linear-gradient(120deg,#0B4438,var(--jade-ink) 60%);color:#fff;border-radius:22px;padding:60px 52px;text-align:center;margin:0 24px;position:relative;overflow:hidden;}
+  .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+  .cta-band h2{color:#fff;font-size:36px;max-width:580px;margin:0 auto 14px;position:relative;z-index:1;line-height:1.2;}
+  .cta-band p{color:rgba(255,255,255,0.65);font-size:15px;max-width:460px;margin:0 auto 28px;position:relative;z-index:1;}
+  .cta-band .btn{position:relative;z-index:1;}
+
+  /* FAQ */
+  .faq{max-width:720px;margin:40px auto 0;}
+  .faq-item{border-bottom:1px solid var(--paper-2);padding:20px 0;cursor:pointer;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15.5px;transition:color 0.2s ease;}
+  .faq-item:hover .faq-q{color:var(--gold);}
+  .faq-q .plus{color:var(--gold);font-size:20px;font-weight:400;transition:transform 0.25s cubic-bezier(0.22,1,0.36,1);}
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease;}
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{padding-top:10px;font-size:14px;color:var(--ink-2);max-width:600px;line-height:1.65;}
+
+  /* FOOTER */
+  footer{background:var(--jade-ink);color:rgba(255,255,255,0.55);padding:52px 0 24px;margin-top:96px;}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .foot-brand img{display:block;height:48px;width:auto;object-fit:contain;}
+  .foot-links{display:flex;gap:28px;font-size:13px;}
+  .foot-links a{transition:color 0.2s ease;}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-bottom{padding-top:20px;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  .section-head{max-width:640px;margin-bottom:8px;}
+  .section-head h2{font-size:34px;margin-bottom:14px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <img src="images/logo claro.jpeg" alt="BEXIN">
+    </div>
+    <div class="nav-links">
+      <a href="#pulso">PULSO</a>
+      <a href="#insights">Insights</a>
+      <a href="#metodo">Método</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#cta">Agendar diagnóstico</a>
+    </div>
+  </nav>
+</header>
+
+<!-- LOGO BANNER -->
+<section class="logo-banner">
+  <img src="images/logo claro.jpeg" alt="BEXIN: Consultoria e Inteligência pro Negócio">
+</section>
+
+<!-- CONCEITO -->
+<section class="conceito">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">O conceito por trás da marca</span>
+      <h2>BEXIN não é nome. É método.</h2>
+      <p class="lede center" style="margin:10px auto 0;">Cada letra é uma frente real da operação. Juntas, formam o ritmo que transforma intenção em resultado.</p>
+    </div>
+    <div class="conceito-grid">
+      <div class="conceito-card reveal d1">
+        <div class="cc-letter"><span>B</span></div>
+        <div class="cc-word">Batida</div>
+        <h3>O ritmo do negócio</h3>
+        <p>Cadência e disciplina para manter a operação em movimento. Sem batida instalada, o time trabalha no improviso.</p>
+      </div>
+      <div class="conceito-card reveal d2">
+        <div class="cc-letter"><span>EX</span></div>
+        <div class="cc-word">Execução</div>
+        <h3>Estratégia que vira ação</h3>
+        <p>Processos e método para fazer acontecer. Toda atividade rastreada: contato, reunião, proposta e fechamento.</p>
+      </div>
+      <div class="conceito-card reveal d3">
+        <div class="cc-letter"><span>IN</span></div>
+        <div class="cc-word">Inteligência</div>
+        <h3>Dados que informam decisões</h3>
+        <p>Análise transformada em informação para decisões mais rápidas. O negócio lido automaticamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="bexin-strip reveal">
+        <div class="bs-block"><div class="bs-letter">B</div><div class="bs-word">Batida</div></div>
+        <div class="bs-block"><div class="bs-letter">EX</div><div class="bs-word">Execução</div></div>
+        <div class="bs-block"><div class="bs-letter">IN</div><div class="bs-word">Inteligência</div></div>
+      </div>
+      <h1 class="reveal d1">O ritmo que transforma estratégia em <em>resultado</em>.</h1>
+      <p class="sub reveal d2">Batida, execução e inteligência para sua equipe comercial operar com método, dado e cadência toda semana.</p>
+      <div class="hero-ctas reveal d3">
+        <a class="btn btn-primary" href="#cta">Agendar diagnóstico gratuito</a>
+        <a class="btn btn-ghost" href="#pulso">Ver o PULSO</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="hv-top"><span class="hv-title">PULSO · Execução Comercial</span></div>
+      <div class="hv-kpis">
+        <div class="hv-kpi"><div class="l">Propostas abertas</div><div class="v">R$ 1,2M</div></div>
+        <div class="hv-kpi"><div class="l">Taxa de conversão</div><div class="v">27%</div></div>
+        <div class="hv-kpi"><div class="l">Reuniões realizadas</div><div class="v">48</div></div>
+        <div class="hv-kpi"><div class="l">Ganhas no mês</div><div class="v">R$ 380K</div></div>
+      </div>
+      <div class="hv-insight"><b>Crítico</b>3 propostas paradas há mais de 90 dias. R$ 420K em risco.</div>
+      <div class="hero-chart">
+        <div class="hv-title" style="margin-bottom:7px;">Atividade semanal</div>
+        <svg viewBox="0 0 256 52" width="100%" style="display:block;overflow:visible;" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="13" x2="256" y2="13" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="0" y1="26" x2="256" y2="26" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <line x1="0" y1="39" x2="256" y2="39" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          <rect x="3"  y="28" width="8" height="23" rx="2" fill="#00C896" fill-opacity="0.12"/>
+          <rect x="13" y="22" width="8" height="29" rx="2" fill="#00C896" fill-opacity="0.28"/>
+          <rect x="23" y="36" width="8" height="15" rx="2" fill="#00C896" fill-opacity="0.7"/>
+          <rect x="44" y="24" width="8" height="27" rx="2" fill="#00C896" fill-opacity="0.12"/>
+          <rect x="54" y="18" width="8" height="33" rx="2" fill="#00C896" fill-opacity="0.28"/>
+          <rect x="64" y="32" width="8" height="19" rx="2" fill="#00C896" fill-opacity="0.7"/>
+          <rect x="85"  y="20" width="8" height="31" rx="2" fill="#00C896" fill-opacity="0.12"/>
+          <rect x="95"  y="14" width="8" height="37" rx="2" fill="#00C896" fill-opacity="0.28"/>
+          <rect x="105" y="28" width="8" height="23" rx="2" fill="#00C896" fill-opacity="0.7"/>
+          <rect x="126" y="18" width="8" height="33" rx="2" fill="#00C896" fill-opacity="0.12"/>
+          <rect x="136" y="10" width="8" height="41" rx="2" fill="#00C896" fill-opacity="0.28"/>
+          <rect x="146" y="24" width="8" height="27" rx="2" fill="#00C896" fill-opacity="0.7"/>
+          <rect x="167" y="14" width="8" height="37" rx="2" fill="#00C896" fill-opacity="0.12"/>
+          <rect x="177" y="8"  width="8" height="43" rx="2" fill="#00C896" fill-opacity="0.28"/>
+          <rect x="187" y="20" width="8" height="31" rx="2" fill="#00C896" fill-opacity="0.7"/>
+          <rect x="208" y="10" width="8" height="41" rx="2" fill="#00C896" fill-opacity="0.2"/>
+          <rect x="218" y="5"  width="8" height="46" rx="2" fill="#00C896" fill-opacity="0.42"/>
+          <rect x="228" y="14" width="8" height="37" rx="2" fill="#00C896"/>
+          <polyline points="27,36 68,32 109,28 150,24 191,20 232,14" fill="none" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <circle cx="232" cy="14" r="3" fill="#00C896"/>
+          <text x="18"  y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">S1</text>
+          <text x="59"  y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">S2</text>
+          <text x="100" y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">S3</text>
+          <text x="141" y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">S4</text>
+          <text x="182" y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.3)" font-family="monospace">S5</text>
+          <text x="223" y="52" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.55)" font-family="monospace">S6</text>
+        </svg>
+        <div class="hchart-legend">
+          <span><i style="background:rgba(0,200,150,0.15);"></i>Contatos</span>
+          <span><i style="background:rgba(0,200,150,0.35);"></i>Reuniões</span>
+          <span><i style="background:#00C896;"></i>Propostas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-block reveal"><div class="stat-n">30min</div><div class="stat-l">Para o diagnóstico inicial</div></div>
+      <div class="stat-block reveal d2"><div class="stat-n">6</div><div class="stat-l">Frentes de execução no PULSO</div></div>
+      <div class="stat-block reveal d3"><div class="stat-n">100%</div><div class="stat-l">Baseado em dado real da operação</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">O problema</span>
+      <h2>Sem método instalado, você não sabe responder:</h2>
+    </div>
+    <div class="pain-list">
+      <div class="pain-item reveal d1"><div class="pain-num">01</div><p><strong>Quantas propostas estão paradas</strong> há mais de 90 dias e quanto isso representa em reais.</p></div>
+      <div class="pain-item reveal d2"><div class="pain-num">02</div><p><strong>Qual vendedor concentra</strong> a maior parte da carteira e o que acontece quando ele sair.</p></div>
+      <div class="pain-item reveal d3"><div class="pain-num">03</div><p>Em qual etapa do funil <strong>os leads mais morrem</strong> e por quê.</p></div>
+      <div class="pain-item reveal d4"><div class="pain-num">04</div><p>Se a <strong>taxa de conversão</strong> melhorou ou piorou em relação ao trimestre passado.</p></div>
+    </div>
+    <p class="pain-close center reveal" style="margin-top:28px;">Quando a meta não fecha, já é tarde demais para agir.</p>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="mech">
+  <div class="mech-bg-photo"></div>
+  <div class="mech-bg-overlay"></div>
+  <div class="mech-wrap">
+    <div class="wrap">
+      <span class="eyebrow reveal">Por que isso acontece</span>
+      <h2 class="reveal d1">Não é falta de esforço.<br>É falta de batida, execução e inteligência juntos.</h2>
+      <div class="mech-reveal" style="margin-top:36px;">
+        <div class="mech-card reveal d2">
+          <h4>O PULSO rastreia a execução</h4>
+          <p>Cada contato, reunião, proposta e fechamento registrado e visível. O gestor lê tudo em uma tela, toda semana.</p>
+        </div>
+        <div class="mech-card reveal d3">
+          <h4>A inteligência aponta onde agir</h4>
+          <p>Alertas automáticos que leem o comportamento real do funil e indicam prioridades sem depender de análise manual.</p>
+        </div>
+        <div class="mech-card reveal d4">
+          <h4>O método instala cadência</h4>
+          <p>Gestores treinados para conduzir rituais semanais e liderar a equipe com dado. Não com achismo.</p>
+        </div>
+        <div class="mech-card reveal d5">
+          <h4>BEXIN fecha a lacuna</h4>
+          <p>Ferramenta, inteligência e método entregues juntos. Não em módulos separados que ninguém conecta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES DO PULSO -->
+<section id="pulso" style="background:var(--white);border-top:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">O PULSO</span>
+      <h2>Seis frentes. Uma visão completa.</h2>
+      <p class="lede">Tudo que acontece na operação comercial visível em uma tela, sem planilha paralela.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal d1">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 5h16l-6.5 8.5V19l-3-1.5V13.5L4 5z" stroke="#046A52" stroke-width="1.6" stroke-linejoin="round" fill="#046A52" fill-opacity="0.18"/></svg></div>
+        <div><h4>Funil Comercial</h4><p>Conversão etapa a etapa, do contato ao fechamento.</p></div>
+      </div>
+      <div class="feature-card reveal d2">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 18l5-6 4 3.5L21 5" stroke="#046A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 5h4v4" stroke="#046A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Pipeline Financeiro</h4><p>Valor em proposta, ganho e em risco, sempre em R$.</p></div>
+      </div>
+      <div class="feature-card reveal d3">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="12" width="5" height="10" rx="1" fill="#046A52" fill-opacity="0.2" stroke="#046A52" stroke-width="1.4"/><rect x="9.5" y="7" width="5" height="15" rx="1" fill="#046A52" fill-opacity="0.4" stroke="#046A52" stroke-width="1.4"/><rect x="17" y="2" width="5" height="20" rx="1" fill="#046A52" fill-opacity="0.65" stroke="#046A52" stroke-width="1.4"/></svg></div>
+        <div><h4>Performance da Equipe</h4><p>Ranking por vendedor com dado real. Comparável e objetivo.</p></div>
+      </div>
+      <div class="feature-card reveal d4">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="5.5" height="18" rx="2" stroke="#046A52" stroke-width="1.4" fill="#046A52" fill-opacity="0.1"/><rect x="9.5" y="3" width="5.5" height="12" rx="2" stroke="#046A52" stroke-width="1.4" fill="#046A52" fill-opacity="0.22"/><rect x="17" y="3" width="5" height="7" rx="2" stroke="#046A52" stroke-width="1.4" fill="#046A52" fill-opacity="0.38"/></svg></div>
+        <div><h4>Carteira Individual</h4><p>Cada vendedor gere a própria carteira em kanban.</p></div>
+      </div>
+      <div class="feature-card reveal d5">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" fill="none" stroke="#046A52" stroke-width="4.5" stroke-opacity="0.12"/><circle cx="12" cy="12" r="6" fill="none" stroke="#046A52" stroke-width="4.5" stroke-opacity="0.65" stroke-dasharray="15 22.7" transform="rotate(-90 12 12)"/><circle cx="12" cy="12" r="6" fill="none" stroke="#00C896" stroke-width="4.5" stroke-opacity="0.5" stroke-dasharray="10 27.7" stroke-dashoffset="-15" transform="rotate(-90 12 12)"/></svg></div>
+        <div><h4>Análise de Mercado</h4><p>Conversão por segmento, canal e campanha.</p></div>
+      </div>
+      <div class="feature-card reveal d6">
+        <div class="feature-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#046A52" stroke-width="1.5" fill="#046A52" fill-opacity="0.05"/><path d="M9 3h6v2H9V3z" fill="#046A52" fill-opacity="0.25" stroke="#046A52" stroke-width="1"/><path d="M8 10h8M8 14h5" stroke="#046A52" stroke-width="1.4" stroke-linecap="round"/><rect x="13.5" y="12.5" width="5" height="5" rx="1.5" fill="#E4FBF3" stroke="#046A52" stroke-width="1.2"/><path d="M14.7 15l.9 1 1.7-1.8" stroke="#046A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Gestão de Leads</h4><p>Histórico, temperatura e próximo passo de cada oportunidade.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights-band" id="insights">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Inteligência automática</span>
+      <h2>O PULSO aponta. Você decide.</h2>
+      <p class="lede">Alertas gerados automaticamente a partir do comportamento real do seu funil.</p>
+    </div>
+    <div class="insight-cards">
+      <div class="icard reveal d1"><span class="badge crit">Crítico</span><div class="t">3 propostas paradas há mais de 90 dias</div><div class="m">R$ 420K em risco</div></div>
+      <div class="icard reveal d2"><span class="badge crit">Crítico</span><div class="t">Concentração de carteira em uma pessoa</div><div class="m">62% do valor em aberto</div></div>
+      <div class="icard reveal d3"><span class="badge att">Atenção</span><div class="t">Gargalo em Reunião para Proposta</div><div class="m">18% de conversão (ref. 50%)</div></div>
+      <div class="icard reveal d4"><span class="badge att">Atenção</span><div class="t">Vendedor com win rate abaixo da média</div><div class="m">4 de 15 fechados</div></div>
+      <div class="icard reveal d5"><span class="badge opp">Oportunidade</span><div class="t">7 leads quentes sem avanço na semana</div><div class="m">7 prioritários</div></div>
+      <div class="icard reveal d6"><span class="badge trend">Tendência</span><div class="t">Win rate em queda há 3 meses</div><div class="m">38% para 24%</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section id="metodo">
+  <div class="wrap">
+    <div class="metodo-layout">
+      <div class="metodo-photo reveal">
+        <img src="images/metodo.jpeg" alt="Método BEXIN">
+      </div>
+      <div>
+        <span class="eyebrow reveal">O método</span>
+        <h2 class="reveal d1" style="font-size:30px;margin-bottom:14px;">Gestores que lideram com dado, não com achismo.</h2>
+        <p class="lede reveal d2">Ferramenta sem método é carro sem motorista. A BEXIN instala batida comercial e treina gestores para conduzir rituais com a equipe.</p>
+        <div class="metodo-cards">
+          <div class="metodo-card reveal d1"><div class="mc-num">01</div><h4>Estrutura antes da ferramenta</h4><p>Como preparar a equipe antes de qualquer sistema.</p></div>
+          <div class="metodo-card reveal d2"><div class="mc-num">02</div><h4>Rituais semanais e mensais</h4><p>O que conduzir toda semana e analisar todo mês.</p></div>
+          <div class="metodo-card reveal d3"><div class="mc-num">03</div><h4>Reunião de pipeline</h4><p>KPIs reais como base da decisão, não opinião.</p></div>
+          <div class="metodo-card reveal d4"><div class="mc-num">04</div><h4>Alertas do PULSO</h4><p>Como transformar cada alerta em ação de time.</p></div>
+          <div class="metodo-card reveal d5"><div class="mc-num">05</div><h4>Batida de energia</h4><p>Como manter ritmo e motivação semana após semana.</p></div>
+          <div class="metodo-card reveal d6"><div class="mc-num">06</div><h4>Execução individual</h4><p>Cada vendedor responsável pela própria carteira.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICAÇÃO -->
+<section style="background:var(--white);border-top:1px solid var(--paper-2);border-bottom:1px solid var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Para quem é</span>
+      <h2>Antes de agendar, veja se faz sentido</h2>
+    </div>
+    <div class="qualify">
+      <div class="qcard yes reveal d1">
+        <h4>É para você, se</h4>
+        <ul>
+          <li>Lidera uma equipe comercial com mais de um vendedor</li>
+          <li>Sente que a estratégia não vira execução</li>
+          <li>Quer método, cadência e dado para o gestor liderar de verdade</li>
+        </ul>
+      </div>
+      <div class="qcard no reveal d2">
+        <h4>Não é para você, se</h4>
+        <ul>
+          <li>Busca ferramenta isolada sem método</li>
+          <li>Quer um CRM genérico cheio de campos que ninguém preenche</li>
+          <li>Prefere módulos separados que ninguém conecta</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section id="processo">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Como começa</span>
+      <h2>Do diagnóstico à rotina instalada</h2>
+    </div>
+    <div class="process">
+      <div class="pstep reveal d1">
+        <div class="pn">1</div>
+        <h4>Diagnóstico</h4>
+        <p>30 minutos para entender onde a operação trava e o que falta para mudar.</p>
+      </div>
+      <div class="pstep reveal d2">
+        <div class="pn">2</div>
+        <h4>Implantação</h4>
+        <p>PULSO configurado com dados reais. Gestores treinados para conduzir rituais.</p>
+      </div>
+      <div class="pstep reveal d3">
+        <div class="pn">3</div>
+        <h4>Acompanhamento</h4>
+        <p>Cadência instalada. Equipe com ritmo. Estratégia virando execução toda semana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="cta" style="padding-top:0;">
+  <div class="cta-band reveal">
+    <h2>Chega de boa estratégia e execução fraca.</h2>
+    <p>Agende um diagnóstico gratuito de 30 minutos e descubra o que falta para sua equipe realizar de verdade.</p>
+    <a class="btn btn-primary" href="#">Agendar diagnóstico gratuito</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal">
+        <div class="faq-q"><span>Preciso trocar de CRM para usar o PULSO?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Não necessariamente. O PULSO foi desenhado para funcionar com os dados que sua operação já gera, sem forçar migração de sistema.</p></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <div class="faq-q"><span>Minha equipe vai precisar aprender uma ferramenta complexa?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>Não. A visão do vendedor mostra só a própria carteira em formato simples. O objetivo é reduzir fricção, não criar mais uma tela para preencher.</p></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <div class="faq-q"><span>A implantação é pontual ou contínua?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>A implantação inclui o processo inicial de instalação de cadência. O acompanhamento contínuo é combinado conforme a maturidade da operação.</p></div>
+      </div>
+      <div class="faq-item reveal d3">
+        <div class="faq-q"><span>O que significa BEXIN?</span><span class="plus">+</span></div>
+        <div class="faq-a"><p>BEXIN vem de Batida, Execução e Inteligência. Não é nome aleatório. É o método que a consultoria entrega: ritmo para avançar, execução para realizar e inteligência para decidir.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="images/logo escuro.jpeg" alt="BEXIN">
+      </div>
+      <div class="foot-links">
+        <a href="#pulso">PULSO</a>
+        <a href="#metodo">Método</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> BEXIN Consultoria e Inteligência. Todos os direitos reservados.</span>
+      <span>Batida · Execução · Inteligência</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.faq-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  var header = document.querySelector('header');
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
