@@ -254,30 +254,46 @@
   .section-head{max-width:640px;margin-bottom:8px;}
   .section-head h2{font-size:34px;margin-bottom:14px;}
 
-  /* AUTORIDADE */
-  .autoridade{background:var(--jade-ink);padding:72px 0;}
-  .auto-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:48px;background:rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;}
-  .auto-block{background:var(--jade-ink);padding:28px 16px;text-align:center;transition:background 0.25s ease;}
-  .auto-block:hover{background:rgba(255,255,255,0.04);}
-  .auto-n{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:8px;}
-  .auto-l{font-size:12px;color:rgba(255,255,255,0.55);font-weight:500;line-height:1.5;}
-  @media(max-width:900px){.auto-grid{grid-template-columns:repeat(3,1fr);}}
-  @media(max-width:560px){.auto-grid{grid-template-columns:repeat(2,1fr);}}
+  /* PREMIUM ILLUMINATION */
+  .btn-primary{position:relative;overflow:hidden;}
+  .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);transform:skewX(-20deg);transition:left 0.55s ease;}
+  .btn-primary:hover::after{left:150%;}
+  .hero-visual{box-shadow:0 0 80px rgba(0,200,150,0.18),0 16px 48px -16px rgba(5,46,36,0.5)!important;}
+  .stat-n,.s-n{text-shadow:0 0 40px rgba(0,200,150,0.4);}
+  .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;}
+  .mech-bg-overlay{background:linear-gradient(130deg,rgba(5,46,36,0.97) 0%,rgba(5,46,36,0.88) 55%,rgba(4,106,82,0.72) 100%);}
 
-  /* DOR INTERATIVA */
-  .dor-pergunta{font-family:'Fraunces',serif;font-size:26px;color:var(--ink);max-width:600px;margin:0 auto 36px;text-align:center;line-height:1.35;}
+  /* AUTORIDADE — split layout premium */
+  .autoridade{background:var(--jade-ink);padding:80px 0;position:relative;overflow:hidden;}
+  .auto-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(ellipse at 50% 5%,rgba(0,200,150,0.11) 0%,transparent 58%);pointer-events:none;z-index:0;}
+  .auto-top{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
+  .auto-left-text{font-size:15px;color:rgba(255,255,255,0.55);max-width:420px;margin-top:18px;line-height:1.75;}
+  .auto-divider{width:52px;height:3px;background:linear-gradient(90deg,var(--jade),transparent);border-radius:2px;margin:24px 0;}
+  .auto-badge-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .auto-badge{background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.22);color:var(--jade);border-radius:100px;padding:5px 14px;font-size:11.5px;font-weight:700;letter-spacing:0.04em;}
+  .auto-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .auto-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 24px;transition:border-color 0.25s ease,background 0.25s ease,box-shadow 0.25s ease;}
+  .auto-stat-card:hover{background:rgba(0,200,150,0.07);border-color:rgba(0,200,150,0.28);box-shadow:0 0 40px rgba(0,200,150,0.09);}
+  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:50px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:10px;text-shadow:0 0 40px rgba(0,200,150,0.45);}
+  .auto-stat-card .auto-label{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;}
+  @media(max-width:860px){.auto-top{grid-template-columns:1fr;gap:40px;}}
+  @media(max-width:560px){.auto-stat-grid{grid-template-columns:1fr 1fr;}}
+
+  /* DOR EMOCIONAL */
+  .dor-eyebrow-pain{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--danger);margin-bottom:16px;}
+  .dor-eyebrow-pain::before{content:'';width:14px;height:2px;background:var(--danger);border-radius:2px;}
   .dor-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:780px;margin:0 auto;}
-  .dor-card{background:var(--white);border:2px solid var(--paper-2);border-radius:16px;padding:22px 26px;cursor:pointer;transition:all 0.22s ease;}
-  .dor-card:hover,.dor-card.active{border-color:var(--gold-line);box-shadow:var(--shadow-gold);background:var(--gold-soft);}
-  .dor-icon{font-size:22px;margin-bottom:10px;}
+  .dor-card{background:var(--white);border:2px solid var(--paper-2);border-left:3px solid transparent;border-radius:16px;padding:22px 26px;cursor:pointer;transition:all 0.22s ease;}
+  .dor-card:hover,.dor-card.active{border-color:rgba(224,85,74,0.2);border-left-color:var(--danger);background:rgba(224,85,74,0.03);box-shadow:0 8px 40px -8px rgba(224,85,74,0.12);}
+  .dor-icon{font-size:24px;margin-bottom:10px;}
   .dor-card h4{font-size:15px;margin-bottom:5px;transition:color 0.22s ease;}
-  .dor-card:hover h4,.dor-card.active h4{color:var(--gold);}
+  .dor-card:hover h4,.dor-card.active h4{color:var(--danger);}
   .dor-card p{font-size:13px;color:var(--ink-2);}
-  .dor-detail{max-width:780px;margin:16px auto 0;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:14px;padding:18px 24px;display:none;}
+  .dor-detail{max-width:780px;margin:16px auto 0;background:rgba(224,85,74,0.04);border:1px solid rgba(224,85,74,0.18);border-left:3px solid var(--danger);border-radius:14px;padding:20px 24px;display:none;}
   .dor-detail.visible{display:block;}
-  .dor-detail-inner{display:flex;flex-direction:column;gap:8px;}
-  .dor-detail-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--jade-deep);}
-  .dor-detail-item::before{content:'→';font-weight:700;flex-shrink:0;}
+  .dor-detail-inner{display:flex;flex-direction:column;gap:10px;}
+  .dor-detail-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);line-height:1.65;}
+  .dor-detail-item::before{content:'→';font-weight:700;flex-shrink:0;color:var(--danger);}
   @media(max-width:600px){.dor-cards{grid-template-columns:1fr;}}
 
   /* PULSO TABS */
@@ -370,6 +386,30 @@
   .inv-form-card .btn-primary{width:100%;justify-content:center;font-size:15px;padding:14px;margin-top:4px;}
   .inv-note{font-size:11.5px;color:rgba(255,255,255,0.35);text-align:center;margin-top:12px;}
   @media(max-width:860px){.inv-wrap{grid-template-columns:1fr;}.inv-form-card{position:static;}}
+
+  /* PULSO CAROUSEL */
+  .pulso-tool-badge{display:inline-flex;align-items:center;gap:9px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:100px;padding:8px 18px;font-size:12px;font-weight:700;color:var(--jade-deep);margin-top:24px;margin-bottom:4px;}
+  .pulso-tool-dot{width:8px;height:8px;border-radius:50%;background:var(--jade);display:inline-block;flex-shrink:0;animation:pulse-dot 2s infinite;}
+  @keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,200,150,0.4);}50%{opacity:0.7;box-shadow:0 0 0 5px rgba(0,200,150,0);}}
+  .pulso-carousel-wrap{position:relative;margin-top:24px;padding:0 56px;}
+  .pulso-carousel{overflow:hidden;}
+  .pulso-slide{display:none;grid-template-columns:1.3fr 0.7fr;gap:40px;align-items:start;}
+  .pulso-slide.active{display:grid;animation:slideIn 0.35s ease;}
+  @keyframes slideIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .pc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--jade-ink);border:1.5px solid rgba(255,255,255,0.1);color:var(--jade);font-size:22px;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.22s ease;line-height:1;padding:0;}
+  .pc-arrow:hover{background:var(--jade);color:var(--jade-ink);box-shadow:0 0 28px rgba(0,200,150,0.4);}
+  .pc-prev{left:0;}.pc-next{right:0;}
+  .pc-dots{display:flex;gap:6px;justify-content:center;margin-top:22px;}
+  .pc-dot{width:8px;height:8px;border-radius:50%;background:var(--paper-2);border:none;cursor:pointer;padding:0;transition:all 0.25s ease;}
+  .pc-dot.active{background:var(--jade);width:28px;border-radius:4px;box-shadow:0 0 12px rgba(0,200,150,0.35);}
+  .pc-label{text-align:center;margin-top:10px;font-size:11px;color:var(--ink-3);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;}
+  @media(max-width:860px){.pulso-slide.active{grid-template-columns:1fr;}.pulso-carousel-wrap{padding:0 44px;}}
+  @media(max-width:560px){.pulso-carousel-wrap{padding:0 36px;}.pc-arrow{width:36px;height:36px;font-size:16px;}}
+
+  /* SOCIAL premium */
+  .social{position:relative;overflow:hidden;}
+  .social::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;z-index:0;}
+  .social .wrap{position:relative;z-index:1;}
 </style>
 </head>
 <body>
@@ -498,32 +538,42 @@
 
 <!-- QUEM SOMOS -->
 <section class="autoridade" id="quem-somos">
+  <div class="auto-glow"></div>
   <div class="wrap">
-    <div class="section-head center reveal" style="max-width:700px;margin-left:auto;margin-right:auto;">
-      <span class="eyebrow" style="justify-content:center;color:var(--jade-line);">Quem está por trás</span>
-      <h2 style="color:#fff;font-size:34px;">Credencial construída em campo, não em apresentação.</h2>
-      <p class="lede center" style="color:rgba(255,255,255,0.6);margin:10px auto 0;">Mais de duas décadas formando equipes, liderando operações e convertendo estratégia em execução real na indústria e no varejo.</p>
+    <div class="reveal" style="position:relative;z-index:1;">
+      <span class="eyebrow" style="color:var(--jade-line);">Quem está por trás</span>
+      <h2 style="color:#fff;font-size:38px;max-width:520px;line-height:1.15;margin-top:4px;">Mais de duas décadas no campo. Não em apresentação.</h2>
     </div>
-    <div class="auto-grid">
-      <div class="auto-block reveal d1">
-        <div class="auto-n">24</div>
-        <div class="auto-l">Anos de atuação comercial em campo</div>
+    <div class="auto-top">
+      <div class="reveal d1">
+        <p class="auto-left-text">Não chegamos com metodologia genérica de consultoria. Chegamos com cicatriz de campo, carreira executiva em Indústria e Varejo, e um método testado em centenas de operações reais — do chão de vendas à diretoria.</p>
+        <div class="auto-divider"></div>
+        <p class="auto-left-text" style="margin-top:0;">A BEXIN existe porque vimos, durante anos, o mesmo problema se repetir: equipe esforçada, gestão perdida, resultado que não fecha. E aprendemos exatamente como resolver isso.</p>
+        <div class="auto-badge-row" style="margin-top:24px;">
+          <span class="auto-badge">Indústria</span>
+          <span class="auto-badge">Varejo</span>
+          <span class="auto-badge">Liderança Comercial</span>
+          <span class="auto-badge">Formação Executiva</span>
+          <span class="auto-badge">MBA</span>
+        </div>
       </div>
-      <div class="auto-block reveal d2">
-        <div class="auto-n">+100</div>
-        <div class="auto-l">Clientes atendidos em diferentes segmentos</div>
-      </div>
-      <div class="auto-block reveal d3">
-        <div class="auto-n">+10K</div>
-        <div class="auto-l">Pessoas formadas em vendas e liderança</div>
-      </div>
-      <div class="auto-block reveal d4">
-        <div class="auto-n">2</div>
-        <div class="auto-l">Décadas como executivo em Indústria e Varejo</div>
-      </div>
-      <div class="auto-block reveal d5">
-        <div class="auto-n">MBA</div>
-        <div class="auto-l">Formação acadêmica e experiência de ensino</div>
+      <div class="auto-stat-grid reveal d2">
+        <div class="auto-stat-card">
+          <div class="auto-n">24</div>
+          <div class="auto-label">Anos de atuação comercial em campo</div>
+        </div>
+        <div class="auto-stat-card">
+          <div class="auto-n">+100</div>
+          <div class="auto-label">Clientes atendidos em diferentes segmentos</div>
+        </div>
+        <div class="auto-stat-card">
+          <div class="auto-n">+10K</div>
+          <div class="auto-label">Pessoas formadas em vendas e liderança</div>
+        </div>
+        <div class="auto-stat-card">
+          <div class="auto-n">2</div>
+          <div class="auto-label">Décadas como executivo em Indústria e Varejo</div>
+        </div>
       </div>
     </div>
   </div>
@@ -541,63 +591,64 @@
 </section>
 
 <!-- DOR -->
-<section id="problema">
+<section id="problema" style="background:var(--paper-2);">
   <div class="wrap">
-    <div class="section-head center reveal" style="max-width:700px;margin-left:auto;margin-right:auto;">
-      <span class="eyebrow" style="justify-content:center;">Onde você trava</span>
-      <h2>O que você mais melhoraria na sua operação comercial?</h2>
+    <div class="section-head center reveal" style="max-width:680px;margin-left:auto;margin-right:auto;">
+      <span class="dor-eyebrow-pain" style="justify-content:center;">A dor real</span>
+      <h2 style="font-size:32px;">Qual desses problemas está destruindo sua operação agora?</h2>
+      <p class="lede center" style="margin:12px auto 0;">Clique no que mais dói. É difícil admitir. E é exatamente por isso que você está aqui.</p>
     </div>
     <div class="dor-cards reveal d1">
       <div class="dor-card" data-dor="ferramenta">
         <div class="dor-icon">📊</div>
         <h4>Ferramenta e Inteligência</h4>
-        <p>Dado espalhado, planilha paralela, sem visão consolidada da operação.</p>
+        <p>Você toma decisão no escuro. Dado espalhado, planilha que ninguém atualiza, sem visibilidade real do que está acontecendo agora.</p>
       </div>
       <div class="dor-card" data-dor="gestao">
-        <div class="dor-icon">🔄</div>
+        <div class="dor-icon">🔥</div>
         <h4>Gestão e Rotina</h4>
-        <p>Sem cadência instalada. Reuniões que não geram ação. Equipe sem ritmo.</p>
+        <p>A equipe trabalha, a reunião acontece, mas nada muda. Sem cadência instalada, o resultado vira roleta — depende de quem apareceu animado na segunda.</p>
       </div>
       <div class="dor-card" data-dor="lideranca">
-        <div class="dor-icon">🎯</div>
+        <div class="dor-icon">⚡</div>
         <h4>Capacitação da Liderança</h4>
-        <p>Gestores que gerenciam por percepção, não por dado. Decisão lenta e imprecisa.</p>
+        <p>O gestor apaga incêndio. Não lidera. Gerencia pelo barulho e só descobre o problema quando a meta já escorregou.</p>
       </div>
       <div class="dor-card" data-dor="equipe">
-        <div class="dor-icon">👥</div>
+        <div class="dor-icon">💸</div>
         <h4>Capacitação da Equipe de Vendas</h4>
-        <p>Vendedores que trabalham muito mas convertem pouco. Sem método, sem foco.</p>
+        <p>Cada vendedor trabalha do seu jeito. Sem método, sem follow-up rastreável. A meta vira esperança, não plano.</p>
       </div>
     </div>
     <div class="dor-detail reveal" id="dor-ferramenta">
       <div class="dor-detail-inner">
-        <div class="dor-detail-item">Quantas propostas estão paradas há mais de 90 dias — e quanto isso representa em reais?</div>
-        <div class="dor-detail-item">Qual vendedor concentra a maior parte da carteira e o que acontece quando ele sair?</div>
-        <div class="dor-detail-item">A taxa de conversão melhorou ou piorou em relação ao trimestre passado?</div>
+        <div class="dor-detail-item">Você sabe agora, sem abrir planilha, quantas propostas estão paradas há mais de 90 dias e o quanto isso representa em R$?</div>
+        <div class="dor-detail-item">Se um vendedor sair amanhã, alguém assume a carteira sem perder os negócios em andamento — ou vai tudo pelo ralo?</div>
+        <div class="dor-detail-item">Sua taxa de conversão caiu ou subiu nesse trimestre? Consegue responder em 30 segundos, com certeza, sem consultar ninguém?</div>
       </div>
     </div>
     <div class="dor-detail reveal" id="dor-gestao">
       <div class="dor-detail-inner">
-        <div class="dor-detail-item">Sua equipe tem reunião de pipeline toda semana, com dado real na tela?</div>
-        <div class="dor-detail-item">Existe um ritual instalado de acompanhamento individual por vendedor?</div>
-        <div class="dor-detail-item">O gestor sabe, no momento certo, onde agir antes da meta escorregar?</div>
+        <div class="dor-detail-item">Sua equipe tem reunião de pipeline toda semana, com dado real na tela — ou cada um está no piloto automático esperando o mês fechar?</div>
+        <div class="dor-detail-item">Quando a meta apertou no mês passado, você soube exatamente onde estava o gargalo antes de ser tarde demais para agir?</div>
+        <div class="dor-detail-item">Existe ritual instalado que acontece independente de humor e energia — ou a operação depende de quem aparece motivado no dia?</div>
       </div>
     </div>
     <div class="dor-detail reveal" id="dor-lideranca">
       <div class="dor-detail-inner">
-        <div class="dor-detail-item">O seu gestor lidera pelo dado ou pela percepção de quem grita mais alto?</div>
-        <div class="dor-detail-item">Ele sabe identificar gargalo de funil sem precisar puxar planilha?</div>
-        <div class="dor-detail-item">Consegue conduzir uma reunião de pipeline com segurança e sem improvisar?</div>
+        <div class="dor-detail-item">Na última reunião de pipeline, seu gestor chegou com análise de dado — ou com percepção de quem estava "trabalhando mais"?</div>
+        <div class="dor-detail-item">Ele consegue identificar onde o funil trava sem precisar perguntar para cada vendedor, um por um, como está a semana?</div>
+        <div class="dor-detail-item">Se você tirar esse gestor por 60 dias, a operação mantém ritmo — ou desmonta porque estava na cabeça de uma pessoa só?</div>
       </div>
     </div>
     <div class="dor-detail reveal" id="dor-equipe">
       <div class="dor-detail-inner">
-        <div class="dor-detail-item">Cada vendedor sabe exatamente qual é o próximo passo de cada oportunidade?</div>
-        <div class="dor-detail-item">O time tem método para prospectar, qualificar e fechar — ou cada um faz do seu jeito?</div>
-        <div class="dor-detail-item">Existe clareza de meta individual, com acompanhamento semanal visível para todos?</div>
+        <div class="dor-detail-item">Cada vendedor sabe, agora mesmo, qual oportunidade precisa de contato urgente — ou isso depende de ele lembrar antes de a proposta vencer?</div>
+        <div class="dor-detail-item">O time segue um processo claro de vendas ou cada um tem o "seu jeito" que não se compara, não se mede e não se melhora?</div>
+        <div class="dor-detail-item">Quando um lead esfria, existe protocolo — ou o negócio simplesmente morre sem diagnóstico e sem aprendizado?</div>
       </div>
     </div>
-    <p class="pain-close center reveal" style="margin-top:32px;">Quando a meta não fecha, já é tarde demais para agir.</p>
+    <p class="pain-close center reveal" style="margin-top:36px;">Quando a meta não fecha, já é tarde demais para agir. A BEXIN chega antes.</p>
   </div>
 </section>
 
@@ -639,18 +690,16 @@
       <h2>Sete frentes. Uma visão completa.</h2>
       <p class="lede">Tudo que acontece na operação comercial visível em uma tela, automatizado, sem planilha paralela.</p>
     </div>
-    <div class="pulso-tabs-nav reveal d1">
-      <button class="ptab-btn active" data-tab="funil">Funil Comercial</button>
-      <button class="ptab-btn" data-tab="financeiro">Pipeline Financeiro</button>
-      <button class="ptab-btn" data-tab="equipe">Performance da Equipe</button>
-      <button class="ptab-btn" data-tab="carteira">Carteira Individual</button>
-      <button class="ptab-btn" data-tab="mercado">Análise de Mercado</button>
-      <button class="ptab-btn" data-tab="insights">Inteligência</button>
-      <button class="ptab-btn" data-tab="gestao">Gestão</button>
+    <div class="pulso-tool-badge reveal d1">
+      <span class="pulso-tool-dot"></span>
+      Ferramenta real &middot; Dados reais do cliente &middot; Operação ao vivo
     </div>
+    <div class="pulso-carousel-wrap">
+      <button class="pc-arrow pc-prev" id="pc-prev">&#8592;</button>
+      <div class="pulso-carousel">
 
-    <!-- TAB: FUNIL -->
-    <div class="pulso-tab-content active" id="ptab-funil">
+    <!-- SLIDE: FUNIL -->
+    <div class="pulso-slide active">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Funil Comercial</span></div>
         <div class="ptab-mock-body">
@@ -680,7 +729,7 @@
     </div>
 
     <!-- TAB: FINANCEIRO -->
-    <div class="pulso-tab-content" id="ptab-financeiro">
+    <div class="pulso-slide" id="ptab-financeiro">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Pipeline Financeiro</span></div>
         <div class="ptab-mock-body">
@@ -710,7 +759,7 @@
     </div>
 
     <!-- TAB: EQUIPE -->
-    <div class="pulso-tab-content" id="ptab-equipe">
+    <div class="pulso-slide" id="ptab-equipe">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Performance da Equipe</span></div>
         <div class="ptab-mock-body">
@@ -740,7 +789,7 @@
     </div>
 
     <!-- TAB: CARTEIRA -->
-    <div class="pulso-tab-content" id="ptab-carteira">
+    <div class="pulso-slide" id="ptab-carteira">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Carteira Individual</span></div>
         <div class="ptab-mock-body">
@@ -769,7 +818,7 @@
     </div>
 
     <!-- TAB: MERCADO -->
-    <div class="pulso-tab-content" id="ptab-mercado">
+    <div class="pulso-slide" id="ptab-mercado">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Análise de Mercado</span></div>
         <div class="ptab-mock-body">
@@ -799,7 +848,7 @@
     </div>
 
     <!-- TAB: INSIGHTS -->
-    <div class="pulso-tab-content" id="ptab-insights">
+    <div class="pulso-slide" id="ptab-insights">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Inteligência Automática</span></div>
         <div class="ptab-mock-body">
@@ -829,7 +878,7 @@
     </div>
 
     <!-- TAB: GESTAO -->
-    <div class="pulso-tab-content" id="ptab-gestao">
+    <div class="pulso-slide" id="ptab-gestao">
       <div class="ptab-mockup">
         <div class="ptab-mock-header"><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><div class="ptab-mock-dot"></div><span class="ptab-mock-title">Gestão Comercial</span></div>
         <div class="ptab-mock-body">
@@ -856,7 +905,13 @@
           <li>Saúde da equipe e engajamento</li>
         </ul>
       </div>
-    </div>
+    </div><!-- .pulso-slide -->
+
+      </div><!-- .pulso-carousel -->
+      <button class="pc-arrow pc-next" id="pc-next">&#8594;</button>
+    </div><!-- .pulso-carousel-wrap -->
+    <div class="pc-dots" id="pc-dots"></div>
+    <p class="pc-label" id="pc-label">1 / 7 &nbsp;&middot;&nbsp; Funil Comercial</p>
   </div>
 </section>
 
@@ -1037,6 +1092,7 @@
         </div>
         <form id="inv-form" onsubmit="handleInvSubmit(event)">
           <div class="inv-field"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome completo" required></div>
+          <div class="inv-field"><label>Empresa</label><input type="text" name="empresa" placeholder="Nome da empresa" required></div>
           <div class="inv-field"><label>WhatsApp</label><input type="tel" name="whatsapp" placeholder="(11) 99999-9999" required></div>
           <div class="inv-field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required></div>
           <button type="submit" class="btn btn-primary">Quero receber a proposta</button>
@@ -1150,17 +1206,38 @@
     });
   });
 
-  // PULSO tabs
-  document.querySelectorAll('.ptab-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var tab = btn.getAttribute('data-tab');
-      document.querySelectorAll('.ptab-btn').forEach(function(b) { b.classList.remove('active'); });
-      document.querySelectorAll('.pulso-tab-content').forEach(function(c) { c.classList.remove('active'); });
-      btn.classList.add('active');
-      var content = document.getElementById('ptab-' + tab);
-      if (content) content.classList.add('active');
+  // PULSO carousel
+  var slides = Array.from(document.querySelectorAll('.pulso-slide'));
+  var currentSlide = 0;
+  var slideLabels = ['Funil Comercial','Pipeline Financeiro','Performance da Equipe','Carteira Individual','Análise de Mercado','Inteligência','Gestão'];
+  var dotsContainer = document.getElementById('pc-dots');
+  var pcLabel = document.getElementById('pc-label');
+  var pcDots = [];
+
+  if (dotsContainer && slides.length) {
+    slideLabels.forEach(function(_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'pc-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', slideLabels[i]);
+      dot.addEventListener('click', function() { goToSlide(i); });
+      dotsContainer.appendChild(dot);
+      pcDots.push(dot);
     });
-  });
+  }
+
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    if (pcDots[currentSlide]) pcDots[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    if (pcDots[currentSlide]) pcDots[currentSlide].classList.add('active');
+    if (pcLabel) pcLabel.innerHTML = (currentSlide + 1) + ' / ' + slides.length + ' &nbsp;&middot;&nbsp; ' + slideLabels[currentSlide];
+  }
+
+  var pcPrev = document.getElementById('pc-prev');
+  var pcNext = document.getElementById('pc-next');
+  if (pcPrev) pcPrev.addEventListener('click', function() { goToSlide(currentSlide - 1); });
+  if (pcNext) pcNext.addEventListener('click', function() { goToSlide(currentSlide + 1); });
 
   // Investimento: seleção de opções
   var selectedOpcoes = [];
@@ -1194,10 +1271,11 @@
   function handleInvSubmit(e) {
     e.preventDefault();
     var nome = e.target.nome.value;
+    var empresa = e.target.empresa.value;
     var whatsapp = e.target.whatsapp.value;
     var email = e.target.email.value;
     var interesse = selectedOpcoes.map(function(k) { return opcaoLabels[k]; }).join(', ') || 'Não especificado';
-    var msg = '👋 Olá! Vim pelo site da BEXIN e gostaria de receber uma proposta.\n\n*Nome:* ' + nome + '\n*WhatsApp:* ' + whatsapp + '\n*E-mail:* ' + email + '\n*Interesse:* ' + interesse;
+    var msg = '👋 Olá! Vim pelo site da BEXIN e gostaria de receber uma proposta.\n\n*Nome:* ' + nome + '\n*Empresa:* ' + empresa + '\n*WhatsApp:* ' + whatsapp + '\n*E-mail:* ' + email + '\n*Interesse:* ' + interesse;
     var url = 'https://wa.me/5511952922249?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   }
