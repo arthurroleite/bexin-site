@@ -263,34 +263,33 @@
   .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;}
   .mech-bg-overlay{background:linear-gradient(130deg,rgba(5,46,36,0.97) 0%,rgba(5,46,36,0.88) 55%,rgba(4,106,82,0.72) 100%);}
 
-  /* AUTORIDADE — fundo branco premium, borda dourada, cards jade */
-  .autoridade{background:var(--white);padding:96px 0;position:relative;border-top:2px solid var(--gold);border-bottom:1px solid var(--paper-2);}
+  /* AUTORIDADE — fundo claro, borda dourada, perfis dos sócios */
+  .autoridade{background:var(--paper-2);padding:96px 0;position:relative;border-top:2px solid var(--gold);border-bottom:1px solid rgba(201,162,75,0.15);}
   .autoridade .eyebrow{color:var(--jade-deep)!important;}
   .autoridade .eyebrow::before{background:var(--gold)!important;}
   .auto-glow{display:none;}
-  .auto-intro{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:end;margin-bottom:52px;}
-  .auto-intro-text{font-size:15px;color:var(--ink-2);line-height:1.78;margin-top:14px;max-width:480px;}
-  .auto-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-  .auto-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-3);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--paper-2);}
-  .auto-expertise{display:flex;flex-direction:column;gap:13px;margin-bottom:24px;}
-  .auto-exp-item{display:flex;align-items:center;gap:10px;}
-  .auto-exp-label{font-size:13px;color:var(--ink-2);width:164px;flex-shrink:0;line-height:1.3;}
-  .auto-exp-bar-wrap{flex:1;height:5px;background:var(--paper-2);border-radius:3px;overflow:hidden;}
-  .auto-exp-bar{height:100%;background:linear-gradient(90deg,var(--jade-deep),var(--jade));border-radius:3px;}
-  .auto-exp-val{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--jade-deep);font-weight:700;width:54px;text-align:right;flex-shrink:0;}
-  .auto-divider{width:40px;height:2px;background:linear-gradient(90deg,var(--jade),transparent);border-radius:2px;margin:20px 0;}
-  .auto-badge-row{display:flex;flex-wrap:wrap;gap:7px;}
-  .auto-badge{background:var(--jade-soft);border:1px solid var(--jade-line);color:var(--jade-deep);border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;}
-  .auto-quote{background:var(--paper-2);border-left:2px solid var(--jade);border-radius:0 10px 10px 0;padding:16px 20px;margin-top:20px;}
-  .auto-quote p{font-family:'Fraunces',serif;font-size:15px;color:var(--ink);line-height:1.65;font-style:italic;margin:0;}
-  .auto-quote cite{display:block;font-size:10px;color:var(--ink-3);margin-top:8px;font-style:normal;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;}
-  .auto-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .auto-stat-card{background:var(--jade-ink);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:22px 18px;transition:transform 0.22s ease,box-shadow 0.22s ease;}
-  .auto-stat-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px -8px rgba(5,46,36,0.35);}
-  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:40px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:8px;text-shadow:0 0 32px rgba(0,200,150,0.4);}
-  .auto-stat-card .auto-label{font-size:11.5px;color:rgba(255,255,255,0.45);line-height:1.55;}
-  @media(max-width:900px){.auto-intro{grid-template-columns:1fr;gap:16px;}.auto-top{grid-template-columns:1fr;gap:32px;}}
-  @media(max-width:560px){.auto-stat-grid{grid-template-columns:1fr 1fr;}}
+  .auto-head{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:end;margin-bottom:52px;}
+  .auto-head-sub{font-size:15px;color:var(--ink-2);line-height:1.78;margin:0;}
+  .auto-profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;}
+  .auto-profile-card{background:var(--white);border:1px solid rgba(201,162,75,0.18);border-top:3px solid var(--gold);border-radius:16px;padding:30px;box-shadow:0 2px 16px rgba(5,46,36,0.05);transition:transform 0.22s ease,box-shadow 0.22s ease;}
+  .auto-profile-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px -8px rgba(5,46,36,0.12);}
+  .auto-profile-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;}
+  .auto-profile-area{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--jade-deep);background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:100px;padding:4px 13px;}
+  .auto-profile-since{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);font-weight:700;}
+  .auto-profile-desc{font-size:14px;color:var(--ink-2);line-height:1.72;margin-bottom:18px;}
+  .auto-profile-list{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:7px;}
+  .auto-profile-list li{font-size:13px;color:var(--ink-2);display:flex;align-items:flex-start;gap:9px;line-height:1.45;}
+  .auto-profile-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
+  .auto-profile-skills{display:flex;flex-wrap:wrap;gap:6px;}
+  .auto-profile-skills span{font-size:11px;font-weight:600;background:var(--paper-2);color:var(--ink-3);border-radius:6px;padding:3px 10px;}
+  /* Números finais */
+  .auto-numbers-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--jade-ink);border-radius:16px;overflow:hidden;}
+  .auto-num-item{background:var(--jade-ink);padding:28px 16px;text-align:center;transition:background 0.22s ease;}
+  .auto-num-item:hover{background:rgba(255,255,255,0.04);}
+  .auto-num-n{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:7px;text-shadow:0 0 32px rgba(0,200,150,0.4);}
+  .auto-num-l{font-size:11px;color:rgba(255,255,255,0.45);line-height:1.45;}
+  @media(max-width:900px){.auto-head{grid-template-columns:1fr;gap:16px;}.auto-profile-grid{grid-template-columns:1fr;}.auto-numbers-strip{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:520px){.auto-numbers-strip{grid-template-columns:repeat(2,1fr);}}
 
   /* DOR EMOCIONAL */
   .dor-eyebrow-pain{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--danger);margin-bottom:16px;}
@@ -572,102 +571,89 @@
 <section class="autoridade" id="quem-somos">
   <div class="wrap">
 
-    <!-- Intro: headline + texto lado a lado -->
-    <div class="auto-intro reveal">
+    <div class="auto-head reveal">
       <div>
         <span class="eyebrow">Quem está por trás</span>
-        <h2 style="font-size:36px;line-height:1.15;margin-top:6px;">Mais de duas décadas no campo.<br>Não em apresentação.</h2>
+        <h2 style="font-size:36px;line-height:1.15;margin-top:6px;">Duas trajetórias.<br>Um método.</h2>
       </div>
-      <div>
-        <p class="auto-intro-text">Não chegamos com metodologia genérica de consultoria. Chegamos com carreira executiva em Indústria e Varejo, cicatriz de campo e um método próprio — testado em centenas de operações reais antes de virar produto. A BEXIN existe porque vimos, anos a fio, o mesmo problema: equipe esforçada, gestão perdida, resultado que não fecha.</p>
-      </div>
+      <p class="auto-head-sub">Unimos mais de duas décadas de operação comercial em campo com expertise em gestão estratégica de projetos, tecnologia e inteligência artificial. Não viemos da consultoria genérica. Viemos do chão de fábrica, do varejo e das trincheiras da gestão.</p>
     </div>
 
-    <!-- Corpo: Conhecimento Técnico + Indicadores de Impacto -->
-    <div class="auto-top">
+    <div class="auto-profile-grid">
 
-      <!-- ESQUERDA: Conhecimento técnico com barras -->
-      <div class="reveal d1">
-        <div class="auto-col-title">Conhecimento técnico · áreas de atuação</div>
-        <div class="auto-expertise">
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Gestão Comercial</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:100%"></div></div>
-            <div class="auto-exp-val">24 anos</div>
-          </div>
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Indústria & Manufatura</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:87%"></div></div>
-            <div class="auto-exp-val">20 anos</div>
-          </div>
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Varejo & Distribuição</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:75%"></div></div>
-            <div class="auto-exp-val">18 anos</div>
-          </div>
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Formação de Líderes</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:92%"></div></div>
-            <div class="auto-exp-val">+10K pess.</div>
-          </div>
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Capacitação de Equipes</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:95%"></div></div>
-            <div class="auto-exp-val">100+ emp.</div>
-          </div>
-          <div class="auto-exp-item">
-            <div class="auto-exp-label">Academia & MBA</div>
-            <div class="auto-exp-bar-wrap"><div class="auto-exp-bar" style="width:68%"></div></div>
-            <div class="auto-exp-val">Pós-grad.</div>
-          </div>
+      <!-- Perfil 1: Comercial & Liderança -->
+      <div class="auto-profile-card reveal d1">
+        <div class="auto-profile-top">
+          <span class="auto-profile-area">Comercial & Liderança</span>
+          <span class="auto-profile-since">24 anos de campo</span>
         </div>
-        <div class="auto-divider"></div>
-        <div class="auto-badge-row">
-          <span class="auto-badge">Carreira Executiva</span>
-          <span class="auto-badge">Indústria</span>
-          <span class="auto-badge">Varejo</span>
-          <span class="auto-badge">Formação de Líderes</span>
-          <span class="auto-badge">MBA</span>
-          <span class="auto-badge">Método próprio</span>
-        </div>
-        <div class="auto-quote">
-          <p>"Não chegamos com slides. Chegamos com cicatriz de campo e um método que funciona porque foi testado nas piores situações possíveis."</p>
-          <cite>Fundadores BEXIN</cite>
+        <p class="auto-profile-desc">Carreira executiva em Indústria, Varejo e Serviços. Construiu e liderou equipes comerciais em operações de alta complexidade. Referência em formação de times, instalação de método e gestão por dado.</p>
+        <ul class="auto-profile-list">
+          <li>24 anos de atuação comercial em campo</li>
+          <li>Carreira executiva em Indústria, Varejo e Serviços</li>
+          <li>+50 clientes atendidos em diferentes segmentos</li>
+          <li>10.000 profissionais formados em vendas e liderança</li>
+          <li>14 anos de vida acadêmica e formação</li>
+        </ul>
+        <div class="auto-profile-skills">
+          <span>Gestão Comercial</span>
+          <span>Liderança de Times</span>
+          <span>Formação de Equipes</span>
+          <span>Método de Vendas</span>
+          <span>Cadência Comercial</span>
         </div>
       </div>
 
-      <!-- DIREITA: Indicadores de impacto numéricos -->
-      <div class="reveal d2">
-        <div class="auto-col-title">Indicadores de impacto</div>
-        <div class="auto-stat-grid">
-          <div class="auto-stat-card">
-            <div class="auto-n">24</div>
-            <div class="auto-label">Anos de atuação comercial em campo</div>
-          </div>
-          <div class="auto-stat-card">
-            <div class="auto-n">+100</div>
-            <div class="auto-label">Empresas atendidas em Indústria e Varejo</div>
-          </div>
-          <div class="auto-stat-card">
-            <div class="auto-n">+10K</div>
-            <div class="auto-label">Profissionais formados em vendas e liderança</div>
-          </div>
-          <div class="auto-stat-card">
-            <div class="auto-n">2</div>
-            <div class="auto-label">Décadas como executivo em empresas de grande porte</div>
-          </div>
-          <div class="auto-stat-card">
-            <div class="auto-n">7</div>
-            <div class="auto-label">Módulos no PULSO cobrindo toda a operação comercial</div>
-          </div>
-          <div class="auto-stat-card">
-            <div class="auto-n">12+</div>
-            <div class="auto-label">Tipos de alerta automático no motor de inteligência</div>
-          </div>
+      <!-- Perfil 2: Gestão, Projetos & Tecnologia -->
+      <div class="auto-profile-card reveal d2">
+        <div class="auto-profile-top">
+          <span class="auto-profile-area">Gestão, Projetos & Tecnologia</span>
+          <span class="auto-profile-since">Desde 2018</span>
+        </div>
+        <p class="auto-profile-desc">Fundador da A3R Consultoria Empresarial. Especialista em gestão de projetos, automação de processos e inteligência artificial aplicada. Conecta estratégia a tecnologia para gerar resultado mensurável.</p>
+        <ul class="auto-profile-list">
+          <li>MBA em Consultoria Empresarial</li>
+          <li>Black Belt Lean Six Sigma · Certificado Scrum</li>
+          <li>Pós-graduação em Docência do Ensino Superior</li>
+          <li>Especialização em Gerenciamento Estratégico de Projetos</li>
+          <li>Power BI · SAP · Dynamics 365 · IA aplicada à gestão</li>
+        </ul>
+        <div class="auto-profile-skills">
+          <span>Scrum · PMBOK</span>
+          <span>Lean Six Sigma</span>
+          <span>Inteligência Artificial</span>
+          <span>Power BI</span>
+          <span>Automação</span>
+          <span>Design Thinking</span>
         </div>
       </div>
 
     </div>
+
+    <!-- Números combinados -->
+    <div class="auto-numbers-strip reveal">
+      <div class="auto-num-item">
+        <div class="auto-num-n">24</div>
+        <div class="auto-num-l">anos de atuação comercial em campo</div>
+      </div>
+      <div class="auto-num-item">
+        <div class="auto-num-n">+50</div>
+        <div class="auto-num-l">clientes atendidos em Indústria e Varejo</div>
+      </div>
+      <div class="auto-num-item">
+        <div class="auto-num-n">+10K</div>
+        <div class="auto-num-l">profissionais formados em vendas e liderança</div>
+      </div>
+      <div class="auto-num-item">
+        <div class="auto-num-n">14</div>
+        <div class="auto-num-l">anos de vida acadêmica e formação</div>
+      </div>
+      <div class="auto-num-item">
+        <div class="auto-num-n">MBA+</div>
+        <div class="auto-num-l">Black Belt · Scrum · Pós-grad · IA</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
