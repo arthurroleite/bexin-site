@@ -535,6 +535,43 @@
 </section>
 
 <!-- QUEM ESTÁ POR TRÁS -->
+<style>
+  .qt-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border:1px solid var(--paper-2);border-radius:18px;overflow:hidden;}
+  .qt-num{padding:32px 20px;text-align:center;border-right:1px solid var(--paper-2);transition:background .25s;}
+  .qt-num:last-child{border-right:none;}
+  .qt-num:hover{background:var(--gold-soft);}
+  .qt-n{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:var(--gold);line-height:1;}
+  .qt-l{font-size:12px;color:var(--ink-3);margin-top:6px;line-height:1.4;}
+  .qt-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;}
+  .qt-card{background:var(--paper);border:1px solid var(--paper-2);border-top:3px solid var(--gold);border-radius:16px;padding:28px 28px 24px;}
+  .qt-card-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .qt-card-title{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--ink);margin-bottom:18px;line-height:1.25;}
+  .qt-cred-list{display:flex;flex-direction:column;gap:9px;}
+  .qt-cred{display:flex;align-items:center;gap:10px;padding:9px 13px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;}
+  .qt-cred-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .qt-cred span{font-size:13px;color:var(--ink);font-weight:600;}
+  .qt-sub-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;margin-top:18px;}
+  .qt-paises{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .qt-pais{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;padding:9px 12px;}
+  .qt-pais span{font-size:13px;font-weight:700;color:var(--ink);}
+  .qt-segs{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .qt-seg{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;}
+  .qt-seg span{font-size:12px;font-weight:700;color:var(--jade-deep);}
+  @media(max-width:760px){
+    .qt-nums{grid-template-columns:repeat(2,1fr);}
+    .qt-num{border-right:none;border-bottom:1px solid var(--paper-2);}
+    .qt-num:nth-child(odd){border-right:1px solid var(--paper-2);}
+    .qt-num:nth-last-child(-n+2){border-bottom:none;}
+    .qt-cards{grid-template-columns:1fr;}
+    .qt-paises{grid-template-columns:1fr 1fr;}
+    .qt-segs{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:420px){
+    .qt-n{font-size:36px;}
+    .qt-paises{grid-template-columns:1fr;}
+    .qt-segs{grid-template-columns:1fr;}
+  }
+</style>
 <section id="quem-somos" style="background:var(--white);padding:80px 0;border-bottom:1px solid var(--paper-2);">
   <div class="wrap">
 
@@ -545,113 +582,63 @@
     </div>
 
     <!-- Números de destaque -->
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border:1px solid var(--paper-2);border-radius:18px;overflow:hidden;">
-      <div style="padding:36px 24px;text-align:center;border-right:1px solid var(--paper-2);transition:background .25s;" onmouseover="this.style.background='var(--gold-soft)'" onmouseout="this.style.background=''">
-        <div style="font-family:'Fraunces',serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;">+20.000</div>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:6px;line-height:1.4;">Profissionais formados<br>em Vendas e Liderança</div>
-      </div>
-      <div style="padding:36px 24px;text-align:center;border-right:1px solid var(--paper-2);transition:background .25s;" onmouseover="this.style.background='var(--gold-soft)'" onmouseout="this.style.background=''">
-        <div style="font-family:'Fraunces',serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;">+100</div>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:6px;line-height:1.4;">Clientes atendidos<br>em operações reais</div>
-      </div>
-      <div style="padding:36px 24px;text-align:center;border-right:1px solid var(--paper-2);transition:background .25s;" onmouseover="this.style.background='var(--gold-soft)'" onmouseout="this.style.background=''">
-        <div style="font-family:'Fraunces',serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;">+24</div>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:6px;line-height:1.4;">Anos de atuação<br>no mercado comercial</div>
-      </div>
-      <div style="padding:36px 24px;text-align:center;transition:background .25s;" onmouseover="this.style.background='var(--gold-soft)'" onmouseout="this.style.background=''">
-        <div style="font-family:'Fraunces',serif;font-size:46px;font-weight:700;color:var(--gold);line-height:1;">4</div>
-        <div style="font-size:12.5px;color:var(--ink-3);margin-top:6px;line-height:1.4;">Países com clientes<br>atendidos</div>
-      </div>
+    <div class="qt-nums reveal">
+      <div class="qt-num"><div class="qt-n">+20.000</div><div class="qt-l">Profissionais formados<br>em Vendas e Liderança</div></div>
+      <div class="qt-num"><div class="qt-n">+100</div><div class="qt-l">Clientes atendidos<br>em operações reais</div></div>
+      <div class="qt-num"><div class="qt-n">+24</div><div class="qt-l">Anos de atuação<br>no mercado comercial</div></div>
+      <div class="qt-num"><div class="qt-n">4</div><div class="qt-l">Países com clientes<br>atendidos</div></div>
     </div>
 
     <!-- Dois cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+    <div class="qt-cards">
 
       <!-- Card Formação -->
-      <div class="reveal d1" style="background:var(--paper);border:1px solid var(--paper-2);border-radius:16px;padding:32px;border-top:3px solid var(--gold);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Perfil Acadêmico dos Sócios</div>
-        <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:20px;line-height:1.2;">+14 anos de vida acadêmica e certificações</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">MBA em Consultoria Empresarial</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">Pós-graduação em Docência do Ensino Superior</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">Especialização em Gerenciamento Estratégico de Projetos</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">Black Belt Lean Six Sigma</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">Certificação Scrum Master</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;">
-            <span style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></span>
-            <span style="font-size:13.5px;color:var(--ink);font-weight:600;">Professores SEBRAE, SENAC e Pós-Graduação</span>
-          </div>
+      <div class="qt-card reveal d1">
+        <div class="qt-card-label">Perfil Acadêmico dos Sócios</div>
+        <div class="qt-card-title">+14 anos de vida acadêmica e certificações</div>
+        <div class="qt-cred-list">
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>MBA em Consultoria Empresarial</span></div>
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>Pós-graduação em Docência do Ensino Superior</span></div>
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>Especialização em Gerenciamento Estratégico de Projetos</span></div>
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>Black Belt Lean Six Sigma</span></div>
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>Certificação Scrum Master</span></div>
+          <div class="qt-cred"><div class="qt-cred-dot"></div><span>Professores SEBRAE, SENAC e Pós-Graduação</span></div>
         </div>
       </div>
 
       <!-- Card Carreira -->
-      <div class="reveal d2" style="background:var(--paper);border:1px solid var(--paper-2);border-radius:16px;padding:32px;border-top:3px solid var(--gold);">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Atuação em Campo</div>
-        <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:20px;line-height:1.2;">Décadas de operação real em campo</div>
+      <div class="qt-card reveal d2">
+        <div class="qt-card-label">Atuação em Campo</div>
+        <div class="qt-card-title">Décadas de operação real em campo</div>
 
-        <!-- Países como blocos visuais -->
-        <div style="margin-bottom:20px;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;">Países de atuação</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <div style="display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;padding:10px 14px;">
-              <span style="font-size:20px;">🇧🇷</span><span style="font-size:13px;font-weight:700;color:var(--ink);">Brasil</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;padding:10px 14px;">
-              <span style="font-size:20px;">🇬🇧</span><span style="font-size:13px;font-weight:700;color:var(--ink);">Reino Unido</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;padding:10px 14px;">
-              <span style="font-size:20px;">🇵🇹</span><span style="font-size:13px;font-weight:700;color:var(--ink);">Portugal</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--paper-2);border-radius:9px;padding:10px 14px;">
-              <span style="font-size:20px;">🇺🇸</span><span style="font-size:13px;font-weight:700;color:var(--ink);">Estados Unidos</span>
-            </div>
+        <div class="qt-sub-label" style="margin-top:0;">Países de atuação</div>
+        <div class="qt-paises">
+          <div class="qt-pais">
+            <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:2px;"><rect width="24" height="16" fill="#009C3B"/><polygon points="12,2 22,8 12,14 2,8" fill="#FFDF00"/><circle cx="12" cy="8" r="3" fill="#002776"/></svg>
+            <span>Brasil</span>
+          </div>
+          <div class="qt-pais">
+            <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:2px;"><rect width="24" height="16" fill="#012169"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#fff" stroke-width="3.5"/><path d="M0,0 L24,16 M24,0 L0,16" stroke="#C8102E" stroke-width="2"/><path d="M12,0 V16 M0,8 H24" stroke="#fff" stroke-width="5"/><path d="M12,0 V16 M0,8 H24" stroke="#C8102E" stroke-width="3"/></svg>
+            <span>Reino Unido</span>
+          </div>
+          <div class="qt-pais">
+            <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:2px;"><rect width="24" height="16" fill="#FF0000"/><rect width="9" height="16" fill="#006600"/><circle cx="9" cy="8" r="3.5" fill="#FFD700" stroke="#006600" stroke-width="0.5"/></svg>
+            <span>Portugal</span>
+          </div>
+          <div class="qt-pais">
+            <svg width="24" height="16" viewBox="0 0 24 16" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:2px;"><rect width="24" height="16" fill="#fff"/><rect y="0" width="24" height="1.6" fill="#B22234"/><rect y="3.2" width="24" height="1.6" fill="#B22234"/><rect y="6.4" width="24" height="1.6" fill="#B22234"/><rect y="9.6" width="24" height="1.6" fill="#B22234"/><rect y="12.8" width="24" height="1.6" fill="#B22234"/><rect width="10" height="8.6" fill="#3C3B6E"/></svg>
+            <span>Estados Unidos</span>
           </div>
         </div>
 
-        <!-- Segmentos -->
-        <div>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;">Segmentos atendidos</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="20" height="13" rx="2" stroke="#046A52" stroke-width="1.6"/><path d="M8 8V6a4 4 0 018 0v2" stroke="#046A52" stroke-width="1.6" stroke-linecap="round"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Indústria</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#046A52" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="#046A52" stroke-width="1.6" stroke-linecap="round"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Varejo</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#046A52" stroke-width="1.6"/><path d="M12 8v4l3 3" stroke="#046A52" stroke-width="1.6" stroke-linecap="round"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Serviços</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 5 6 5 10c0 5 7 12 7 12s7-7 7-12c0-4-3-8-7-8z" stroke="#046A52" stroke-width="1.6"/><circle cx="12" cy="10" r="2.5" stroke="#046A52" stroke-width="1.4"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Alimentos</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#046A52" stroke-width="1.6" stroke-linecap="round"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Nutracêuticos</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--jade-soft);border:1px solid var(--jade-line);border-radius:10px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 20h20M4 20V10l8-7 8 7v10" stroke="#046A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="6" height="6" rx="1" stroke="#046A52" stroke-width="1.4"/></svg>
-              <span style="font-size:12.5px;font-weight:700;color:var(--jade-deep);">Construção Civil</span>
-            </div>
-          </div>
+        <div class="qt-sub-label">Segmentos atendidos</div>
+        <div class="qt-segs">
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="20" height="13" rx="2" stroke="#046A52" stroke-width="1.7"/><path d="M8 8V6a4 4 0 018 0v2" stroke="#046A52" stroke-width="1.7" stroke-linecap="round"/></svg><span>Indústria</span></div>
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#046A52" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke="#046A52" stroke-width="1.7" stroke-linecap="round"/></svg><span>Varejo</span></div>
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#046A52" stroke-width="1.7"/><path d="M12 8v4l3 3" stroke="#046A52" stroke-width="1.7" stroke-linecap="round"/></svg><span>Serviços</span></div>
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.5 2 5 5.5 5 9.5c0 5.25 7 12.5 7 12.5s7-7.25 7-12.5C19 5.5 15.5 2 12 2z" stroke="#046A52" stroke-width="1.7"/><circle cx="12" cy="9.5" r="2.5" stroke="#046A52" stroke-width="1.5"/></svg><span>Alimentos</span></div>
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#046A52" stroke-width="1.7" stroke-linecap="round"/></svg><span>Nutracêuticos</span></div>
+          <div class="qt-seg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M2 20h20M4 20V10l8-7 8 7v10" stroke="#046A52" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><rect x="9" y="14" width="6" height="6" rx="1" stroke="#046A52" stroke-width="1.5"/></svg><span>Construção Civil</span></div>
         </div>
       </div>
 
