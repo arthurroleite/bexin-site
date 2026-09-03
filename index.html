@@ -263,19 +263,24 @@
   .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;}
   .mech-bg-overlay{background:linear-gradient(130deg,rgba(5,46,36,0.97) 0%,rgba(5,46,36,0.88) 55%,rgba(4,106,82,0.72) 100%);}
 
-  /* AUTORIDADE — split layout premium */
-  .autoridade{background:var(--jade-ink);padding:80px 0;position:relative;overflow:hidden;}
-  .auto-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(ellipse at 50% 5%,rgba(0,200,150,0.11) 0%,transparent 58%);pointer-events:none;z-index:0;}
+  /* AUTORIDADE — tema dourado */
+  .autoridade{background:linear-gradient(160deg,#151009 0%,#0E0B04 45%,#191307 100%);padding:88px 0;position:relative;overflow:hidden;}
+  .autoridade .eyebrow{color:var(--gold)!important;}
+  .autoridade .eyebrow::before{background:var(--gold)!important;}
+  .auto-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(ellipse at 50% 5%,rgba(201,162,75,0.13) 0%,transparent 55%);pointer-events:none;z-index:0;}
   .auto-top{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:52px;}
-  .auto-left-text{font-size:15px;color:rgba(255,255,255,0.55);max-width:420px;margin-top:18px;line-height:1.75;}
-  .auto-divider{width:52px;height:3px;background:linear-gradient(90deg,var(--jade),transparent);border-radius:2px;margin:24px 0;}
+  .auto-left-text{font-size:15px;color:rgba(255,255,255,0.55);max-width:420px;margin-top:18px;line-height:1.8;}
+  .auto-divider{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin:24px 0;}
   .auto-badge-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .auto-badge{background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.22);color:var(--jade);border-radius:100px;padding:5px 14px;font-size:11.5px;font-weight:700;letter-spacing:0.04em;}
+  .auto-badge{background:rgba(201,162,75,0.1);border:1px solid rgba(201,162,75,0.25);color:var(--gold);border-radius:100px;padding:5px 14px;font-size:11.5px;font-weight:700;letter-spacing:0.04em;}
   .auto-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .auto-stat-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 24px;transition:border-color 0.25s ease,background 0.25s ease,box-shadow 0.25s ease;}
-  .auto-stat-card:hover{background:rgba(0,200,150,0.07);border-color:rgba(0,200,150,0.28);box-shadow:0 0 40px rgba(0,200,150,0.09);}
-  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:50px;font-weight:700;color:var(--jade);line-height:1;margin-bottom:10px;text-shadow:0 0 40px rgba(0,200,150,0.45);}
-  .auto-stat-card .auto-label{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;}
+  .auto-stat-card{background:rgba(201,162,75,0.04);border:1px solid rgba(201,162,75,0.1);border-radius:16px;padding:28px 24px;transition:border-color 0.28s ease,background 0.28s ease,box-shadow 0.28s ease;}
+  .auto-stat-card:hover{background:rgba(201,162,75,0.08);border-color:rgba(201,162,75,0.32);box-shadow:0 0 48px rgba(201,162,75,0.12);}
+  .auto-stat-card .auto-n{font-family:'Fraunces',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:10px;text-shadow:0 0 48px rgba(201,162,75,0.55);}
+  .auto-stat-card .auto-label{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.65;}
+  .auto-quote{position:relative;margin-top:28px;padding:20px 24px;border-left:2px solid rgba(201,162,75,0.35);background:rgba(201,162,75,0.04);border-radius:0 10px 10px 0;}
+  .auto-quote p{font-family:'Fraunces',serif;font-size:16px;color:rgba(255,255,255,0.65);line-height:1.65;font-style:italic;}
+  .auto-quote cite{display:block;font-size:11px;color:rgba(201,162,75,0.7);margin-top:10px;font-style:normal;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;}
   @media(max-width:860px){.auto-top{grid-template-columns:1fr;gap:40px;}}
   @media(max-width:560px){.auto-stat-grid{grid-template-columns:1fr 1fr;}}
 
@@ -410,6 +415,25 @@
   .social{position:relative;overflow:hidden;}
   .social::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(0,200,150,0.08) 0%,transparent 65%);pointer-events:none;z-index:0;}
   .social .wrap{position:relative;z-index:1;}
+
+  /* MODAL DOR */
+  .dor-modal-overlay{position:fixed;inset:0;background:rgba(10,3,3,0.93);z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:opacity 0.3s ease,visibility 0.3s ease;backdrop-filter:blur(8px);}
+  .dor-modal-overlay.open{opacity:1;visibility:visible;}
+  .dor-modal{background:#180808;border:1px solid rgba(224,85,74,0.25);border-radius:22px;max-width:660px;width:100%;padding:44px 48px;position:relative;transform:scale(0.94) translateY(8px);transition:transform 0.3s cubic-bezier(0.22,1,0.36,1);box-shadow:0 0 100px rgba(224,85,74,0.12),0 32px 80px rgba(0,0,0,0.6);}
+  .dor-modal-overlay.open .dor-modal{transform:scale(1) translateY(0);}
+  .dor-modal-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:rgba(255,255,255,0.4);font-size:20px;line-height:1;transition:all 0.2s ease;}
+  .dor-modal-close:hover{background:rgba(224,85,74,0.15);color:var(--danger);border-color:rgba(224,85,74,0.3);}
+  .dor-modal-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(224,85,74,0.1);border:1px solid rgba(224,85,74,0.22);color:var(--danger);border-radius:100px;padding:5px 14px;font-size:10.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:18px;}
+  .dor-modal-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--danger);display:inline-block;animation:pulse-dot 1.4s infinite;}
+  .dor-modal h3{font-family:'Fraunces',serif;font-size:26px;color:#fff;margin-bottom:6px;line-height:1.2;}
+  .dor-modal-sub{font-size:13px;color:rgba(255,255,255,0.38);margin-bottom:28px;font-style:italic;}
+  .dor-modal-qs{display:flex;flex-direction:column;gap:14px;}
+  .dor-modal-q{background:rgba(224,85,74,0.06);border-left:3px solid var(--danger);border-radius:0 12px 12px 0;padding:16px 20px;transition:background 0.2s ease;}
+  .dor-modal-q:hover{background:rgba(224,85,74,0.1);}
+  .dor-modal-q p{font-size:15px;color:rgba(255,255,255,0.82);line-height:1.65;margin:0;}
+  .dor-modal-footer{margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+  .dor-modal-footer p{font-size:13px;color:rgba(255,255,255,0.35);}
+  @media(max-width:640px){.dor-modal{padding:32px 24px;}.dor-modal h3{font-size:21px;}.dor-modal-footer{flex-direction:column;text-align:center;}}
 </style>
 </head>
 <body>
@@ -548,7 +572,11 @@
       <div class="reveal d1">
         <p class="auto-left-text">Não chegamos com metodologia genérica de consultoria. Chegamos com cicatriz de campo, carreira executiva em Indústria e Varejo, e um método testado em centenas de operações reais — do chão de vendas à diretoria.</p>
         <div class="auto-divider"></div>
-        <p class="auto-left-text" style="margin-top:0;">A BEXIN existe porque vimos, durante anos, o mesmo problema se repetir: equipe esforçada, gestão perdida, resultado que não fecha. E aprendemos exatamente como resolver isso.</p>
+        <p class="auto-left-text" style="margin-top:0;">A BEXIN existe porque vimos, durante anos, o mesmo problema se repetir: equipe esforçada, gestão perdida, resultado que não fecha. Aprendemos exatamente onde está o buraco — e como tampar.</p>
+        <div class="auto-quote">
+          <p>"Não chegamos com slides bonitos. Chegamos com cicatriz de campo e um método que funciona porque foi testado nas piores situações possíveis."</p>
+          <cite>Fundadores BEXIN</cite>
+        </div>
         <div class="auto-badge-row" style="margin-top:24px;">
           <span class="auto-badge">Indústria</span>
           <span class="auto-badge">Varejo</span>
@@ -620,35 +648,7 @@
         <p>Cada vendedor trabalha do seu jeito. Sem método, sem follow-up rastreável. A meta vira esperança, não plano.</p>
       </div>
     </div>
-    <div class="dor-detail reveal" id="dor-ferramenta">
-      <div class="dor-detail-inner">
-        <div class="dor-detail-item">Você sabe agora, sem abrir planilha, quantas propostas estão paradas há mais de 90 dias e o quanto isso representa em R$?</div>
-        <div class="dor-detail-item">Se um vendedor sair amanhã, alguém assume a carteira sem perder os negócios em andamento — ou vai tudo pelo ralo?</div>
-        <div class="dor-detail-item">Sua taxa de conversão caiu ou subiu nesse trimestre? Consegue responder em 30 segundos, com certeza, sem consultar ninguém?</div>
-      </div>
-    </div>
-    <div class="dor-detail reveal" id="dor-gestao">
-      <div class="dor-detail-inner">
-        <div class="dor-detail-item">Sua equipe tem reunião de pipeline toda semana, com dado real na tela — ou cada um está no piloto automático esperando o mês fechar?</div>
-        <div class="dor-detail-item">Quando a meta apertou no mês passado, você soube exatamente onde estava o gargalo antes de ser tarde demais para agir?</div>
-        <div class="dor-detail-item">Existe ritual instalado que acontece independente de humor e energia — ou a operação depende de quem aparece motivado no dia?</div>
-      </div>
-    </div>
-    <div class="dor-detail reveal" id="dor-lideranca">
-      <div class="dor-detail-inner">
-        <div class="dor-detail-item">Na última reunião de pipeline, seu gestor chegou com análise de dado — ou com percepção de quem estava "trabalhando mais"?</div>
-        <div class="dor-detail-item">Ele consegue identificar onde o funil trava sem precisar perguntar para cada vendedor, um por um, como está a semana?</div>
-        <div class="dor-detail-item">Se você tirar esse gestor por 60 dias, a operação mantém ritmo — ou desmonta porque estava na cabeça de uma pessoa só?</div>
-      </div>
-    </div>
-    <div class="dor-detail reveal" id="dor-equipe">
-      <div class="dor-detail-inner">
-        <div class="dor-detail-item">Cada vendedor sabe, agora mesmo, qual oportunidade precisa de contato urgente — ou isso depende de ele lembrar antes de a proposta vencer?</div>
-        <div class="dor-detail-item">O time segue um processo claro de vendas ou cada um tem o "seu jeito" que não se compara, não se mede e não se melhora?</div>
-        <div class="dor-detail-item">Quando um lead esfria, existe protocolo — ou o negócio simplesmente morre sem diagnóstico e sem aprendizado?</div>
-      </div>
-    </div>
-    <p class="pain-close center reveal" style="margin-top:36px;">Quando a meta não fecha, já é tarde demais para agir. A BEXIN chega antes.</p>
+    <p class="pain-close center reveal" style="margin-top:36px;font-size:16px;color:var(--ink-2);">Clique em qualquer frente acima. As perguntas vão revelar o tamanho real do problema.</p>
   </div>
 </section>
 
@@ -1161,6 +1161,21 @@
   </div>
 </footer>
 
+<!-- MODAL DOR -->
+<div class="dor-modal-overlay" id="dor-modal-overlay">
+  <div class="dor-modal" role="dialog" aria-modal="true">
+    <button class="dor-modal-close" id="dor-modal-close" aria-label="Fechar">&#215;</button>
+    <div class="dor-modal-badge"><span class="dor-modal-badge-dot"></span>Diagnóstico crítico</div>
+    <h3 id="dor-modal-title"></h3>
+    <p class="dor-modal-sub" id="dor-modal-sub"></p>
+    <div class="dor-modal-qs" id="dor-modal-qs"></div>
+    <div class="dor-modal-footer">
+      <p>Reconheceu? Você não precisa continuar assim.</p>
+      <a class="btn btn-primary" href="#investimento" id="dor-modal-cta-btn">Quero resolver isso &rarr;</a>
+    </div>
+  </div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1190,19 +1205,80 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  // DOR interativa
-  var dorDetails = { ferramenta: [], gestao: [], lideranca: [], equipe: [] };
+  // DOR modal
+  var dorData = {
+    ferramenta: {
+      title: 'Você está operando no escuro.',
+      sub: 'Sem dado real. Sem visão. Sem controle.',
+      qs: [
+        'Você sabe agora, sem abrir planilha, quantas propostas estão paradas há mais de 90 dias — e o quanto isso representa em R$?',
+        'Se um vendedor sair amanhã, alguém consegue assumir a carteira sem perder os negócios em andamento — ou vai tudo pelo ralo?',
+        'Sua taxa de conversão caiu ou subiu esse trimestre? Consegue responder em 30 segundos, com certeza, sem consultar ninguém?'
+      ]
+    },
+    gestao: {
+      title: 'Sua operação não tem ritmo. Tem improviso.',
+      sub: 'Esforço sem cadência não vira resultado. Nunca.',
+      qs: [
+        'Sua equipe tem reunião de pipeline toda semana, com dado real na tela — ou cada um está no piloto automático esperando o mês fechar?',
+        'Quando a meta apertou no mês passado, você soube exatamente onde estava o gargalo antes de ser tarde demais para agir?',
+        'Existe ritual instalado que acontece independente de humor — ou a operação depende de quem apareceu motivado na segunda-feira?'
+      ]
+    },
+    lideranca: {
+      title: 'Seu gestor gerencia pelo barulho, não pelo dado.',
+      sub: 'E quando descobre o problema, já é tarde para agir.',
+      qs: [
+        'Na última reunião de pipeline, seu gestor chegou com análise de dado — ou com percepção de quem estava "trabalhando mais"?',
+        'Ele consegue identificar onde o funil trava sem precisar perguntar para cada vendedor, um por um, como está a semana?',
+        'Se você tirar esse gestor por 60 dias, a operação mantém ritmo — ou desmonta porque tudo estava na cabeça de uma pessoa só?'
+      ]
+    },
+    equipe: {
+      title: 'Cada vendedor é um freelancer dentro da sua empresa.',
+      sub: 'Sem método comum, o resultado é impossível de replicar.',
+      qs: [
+        'Cada vendedor sabe, agora mesmo, qual oportunidade precisa de contato urgente — ou isso depende de ele lembrar antes de a proposta vencer?',
+        'O time segue um processo claro de vendas — ou cada um tem o "seu jeito" que não se compara, não se mede e não se melhora?',
+        'Quando um lead esfria, existe protocolo definido — ou o negócio morre sem diagnóstico e sem nenhum aprendizado?'
+      ]
+    }
+  };
+
+  var dorOverlay = document.getElementById('dor-modal-overlay');
+  var dorModalClose = document.getElementById('dor-modal-close');
+  var dorModalCtaBtn = document.getElementById('dor-modal-cta-btn');
+
+  function openDorModal(key) {
+    var data = dorData[key];
+    if (!data) return;
+    document.getElementById('dor-modal-title').textContent = data.title;
+    document.getElementById('dor-modal-sub').textContent = data.sub;
+    var qsEl = document.getElementById('dor-modal-qs');
+    qsEl.innerHTML = data.qs.map(function(q) {
+      return '<div class="dor-modal-q"><p>' + q + '</p></div>';
+    }).join('');
+    dorOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDorModal() {
+    dorOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    document.querySelectorAll('.dor-card').forEach(function(c) { c.classList.remove('active'); });
+  }
+
+  if (dorModalClose) dorModalClose.addEventListener('click', closeDorModal);
+  if (dorOverlay) dorOverlay.addEventListener('click', function(e) { if (e.target === dorOverlay) closeDorModal(); });
+  if (dorModalCtaBtn) dorModalCtaBtn.addEventListener('click', closeDorModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeDorModal(); });
+
   document.querySelectorAll('.dor-card').forEach(function(card) {
     card.addEventListener('click', function() {
       var dor = card.getAttribute('data-dor');
-      var wasActive = card.classList.contains('active');
       document.querySelectorAll('.dor-card').forEach(function(c) { c.classList.remove('active'); });
-      document.querySelectorAll('.dor-detail').forEach(function(d) { d.classList.remove('visible'); });
-      if (!wasActive) {
-        card.classList.add('active');
-        var detail = document.getElementById('dor-' + dor);
-        if (detail) detail.classList.add('visible');
-      }
+      card.classList.add('active');
+      openDorModal(dor);
     });
   });
 
